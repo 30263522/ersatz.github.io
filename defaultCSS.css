@@ -55,7 +55,7 @@ Footer{
     text-decoration: none;
   }
 
-  #top #themesButton {
+   #themesButton {
     float: right;
     display: block;
     text-align: center;
