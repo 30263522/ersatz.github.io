@@ -47,7 +47,7 @@ Footer{
     text-decoration: none;
   }
 
-  #top #themesButton {
+  .topnav #themesButton {
     float: right;
     display: block;
     text-align: center;
