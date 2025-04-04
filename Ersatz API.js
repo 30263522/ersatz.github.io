@@ -29,6 +29,7 @@ const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contracte
 ]
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
+const baseURL = "ersatz.github.io"
 const Database = [] // JavaScript database array.
 
 // Versions
@@ -138,7 +139,7 @@ function initiateError(err, errType, returnAddress) { // Called with params in t
     if (returnAddress !=null) {
       localStorage.setItem('EEA-errHandle-Return', returnAddress)
     }  else {
-      returnAddress = '/'
+      returnAddress = '/'+baseURL
       localStorage.setItem('EEA-errHandle-Return', returnAddress)
     }
     location.replace("/Error") // Sends user to Error web page.
@@ -154,7 +155,7 @@ function initialiseErrorPage() { // Called onload within Error page. No params r
     // On Error page
   } else {
     window.alert(APIName+': Failed to initalise Error page. This may occur either because there is no active Error or page is not an Error page.')
-    redirectURL('/', 'replace')
+    redirectURL('/'+baseURL, 'replace')
   }
 }
 // End of Initalise Error Page
@@ -166,7 +167,7 @@ function uninitialiseErrorPage() { // Called onunload within Error page. No para
   }
   else {
     window.alert(APIName+': Failed to uninitalise Error page. This may occur either because there is no active Error or page is not an Error page.')
-    redirectURL('/', 'replace')
+    redirectURL('/'+baseURL, 'replace')
   }
 }
 // End of Error Handling
