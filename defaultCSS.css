@@ -54,6 +54,15 @@ Footer{
     padding: 14px 16px;
     text-decoration: none;
   }
+
+  .topnav button {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
   
   /* Links - change color on hover */
   .topnav a:hover {
@@ -103,7 +112,7 @@ Footer{
 h1{align-self: self-start; text-shadow: 2px 2px 2px black;}
 h2{align-self: self-start; text-shadow: 2px 2px 2px black;}
 
-button #top{
+button #themesButton{
     color:whitesmoke;
     border: 2px; 
     /* border-color: pink; 

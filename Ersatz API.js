@@ -211,7 +211,7 @@ function initialiseThemeButton() {
 
 // Console - Creditor
 console.warn(`
-${APIName} (Version: ${APIVersion}) successfully started running in the background,
+${APIName} (Version: ${APIVersion}) successfully started running in the background;
 Ready for use.
 
 Developed by Jonah  {Jonah@print3designs.uk}
