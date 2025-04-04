@@ -55,10 +55,10 @@ Footer{
     text-decoration: none;
   }
 
-  .topnav button {
+  .topnav #themesbutton {
     float: right;
     display: block;
-    color: #000000;
+    color: aliceblue;
     background-color: #000000;
     text-align: center;
     padding: 14px 16px;
