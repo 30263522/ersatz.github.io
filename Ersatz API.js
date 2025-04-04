@@ -142,7 +142,7 @@ function initiateError(err, errType, returnAddress) { // Called with params in t
       returnAddress = '/'+baseURL
       localStorage.setItem('EEA-errHandle-Return', returnAddress)
     }
-    location.replace("/Error") // Sends user to Error web page.
+    location.replace("/"+baseURL+"/Error") // Sends user to Error web page.
   } else {
     console.error('initiateError() called, but no Error provided.')
   }
