@@ -55,7 +55,7 @@ Footer{
     text-decoration: none;
   }
 
-  .topnav #themesbutton {
+  #top .themesbutton {
     float: right;
     display: block;
     color: aliceblue;
