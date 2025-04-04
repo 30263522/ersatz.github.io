@@ -15,7 +15,7 @@ Each individual page should be a folder with "index.html" inside for "/pagename"
 Pages: Home (/), Contact Us (/Contact-Us), About Us (/About-Us), Banks (/Banks), Error (/err or /Error) and Login (/Login) / Create Account (/Login/Create)
 Version: */ let APIVersion = 0.4+"Beta"
 const APIName = 'Ersatz Enterprises API'
-// test
+
 // Configuration Variables
 const themesArray = [ // Avaliable Types: Text; Background; Button
   {Class:'DefaultText', Type:'Text', Themes:{DarkMode:'white', LightMode:'black'}},
