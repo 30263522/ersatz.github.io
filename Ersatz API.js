@@ -199,10 +199,10 @@ function initialiseSocialButtons() {
 })
 }
 function initialiseThemeButton() {
-  document.getElementById('themeButton').addEventListener('mouseover', d=> {
+  document.getElementById('themesButton').addEventListener('mouseover', d=> {
     // Code for hover
   })
-  document.getElementById('themeButton').addEventListener('mouseout', e=>{
+  document.getElementById('themesButton').addEventListener('mouseout', e=>{
      // Code for dehover
   })
 }
