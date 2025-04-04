@@ -4,7 +4,7 @@ Contains: Theme Controller, General Functions, Global Functions, Error Handling
 
 Developed by Jonah
 
-  Group Information: nn
+  Group Information:
 Group: Group 4
 Members: Jonah, Karl, Tilda and Rahul
 
