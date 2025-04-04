@@ -61,6 +61,7 @@ Footer{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border: 0px;
   }
   
   /* Links - change color on hover */
