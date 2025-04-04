@@ -150,7 +150,7 @@ function initiateError(err, errType, returnAddress) { // Called with params in t
 // Initialise Error Page
 function initialiseErrorPage() { // Called onload within Error page. No params required. To handle an error, use initiateError() with its params (err, errType, Return), See that function above.
   pathname = getURLElements().pathname
-  if (pathname == '/Error' || pathname == '/Error/Fatal') {
+  if (pathname == '/Error' || pathname == '/Error/Fatal' || pathname == '/ersatz.github.io/Error') {
     // On Error page
   } else {
     window.alert(APIName+': Failed to initalise Error page. This may occur either because there is no active Error or page is not an Error page.')
@@ -161,7 +161,7 @@ function initialiseErrorPage() { // Called onload within Error page. No params r
 // Unitialise Error Page
 function uninitialiseErrorPage() { // Called onunload within Error page. No params required. To handle an error, use initiateError() with its params (err, errType, Return), See that function above.
   pathname = getURLElements().pathname
-  if (pathname == '/Error' || pathname == '/Error/Fatal') {
+  if (pathname == '/Error' || pathname == '/Error/Fatal' || pathname == '/ersatz.github.io/Error') {
     // Uninitalise Code
   }
   else {
