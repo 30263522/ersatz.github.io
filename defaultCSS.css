@@ -111,13 +111,3 @@ Footer{
 /*Text*/
 h1{align-self: self-start; text-shadow: 2px 2px 2px black;}
 h2{align-self: self-start; text-shadow: 2px 2px 2px black;}
-
-button #themesButton{
-    color:whitesmoke;
-    border: 2px; 
-    /* border-color: pink; 
-    border-style: solid; */
-    justify-content: flex-end;
-    order:-0
-    
-}
