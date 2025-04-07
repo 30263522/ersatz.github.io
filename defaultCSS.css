@@ -1,124 +1,28 @@
 /*Theme for the whole website*/
 *{margin: 0; padding: 0; border: 0;}
-body{
-    height: 100%; 
-    background-image: linear-gradient(rgb(75, 71, 71), rgb(199, 191, 191)); 
-    background-repeat:no-repeat; 
-    display: flex; 
-    flex-direction: column;
-justify-content: space-between;}
+body{height: 100%; background-image: linear-gradient(rgb(75, 71, 71), rgb(199, 191, 191)); background-repeat:no-repeat; display: flex; flex-direction: column; justify-content: space-between;}
 html{height: 100%;}
 /*Headers, Footers*/
-header{
-    padding:10px; 
-    align-self: center; 
-    border-style:solid; 
-    border-width:8px; 
-    border-color:aquamarine; 
-    background-color:black; 
-    color:whitesmoke;}
-Footer{
-    align-self: center; 
-    border-style:solid; 
-    border-width:8px; 
-    border-color:aquamarine; 
-    background-color:black; 
-    
-    
-}
+header{padding:10px; align-self: center; border-style:solid; border-width:8px; border-color:aquamarine; background-color:black; color:whitesmoke;}
+Footer{align-self: center; border-style:solid; border-width:8px; border-color:aquamarine; background-color:black;}
 /*Alignments*/
 
 
 /* The navbar container */
-.topnav {
-    overflow:hidden;
-    background-color: #000000;
-    border-width: 8px;
-    border-color: aquamarine;
-  }
+.topnav {overflow:hidden;background-color: #000000;border-width: 8px;border-color: aquamarine;}
   
   /* Navbar links */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  #themesButton {
-    float: right;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border: 0px;
-    background-color: #000000;
-    color:#f2f2f2;
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  #themesButton:hover {
-    background-color: #d8d5d7;
-    color:#000000;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  #top{
-    color:whitesmoke;
-    border: 2px; 
-    /* border-color: pink; 
-    border-style: solid; */
-    justify-content: flex-end;
-    order:-0
-
-}
+  .topnav a {float: left;display: block;color: #f2f2f2;text-align: center;padding: 14px 16px;text-decoration: none;}
+  #themesButton {float: right;display: block;text-align: center;padding: 14px 16px;text-decoration: none;border: 0px;background-color: #000000;color:#f2f2f2;font-size: 16px;font-family: 'Times New Roman', Times, serif;}
+  #themesButton:hover {background-color: #d8d5d7;color:#000000;cursor: pointer;font-size: 16px;font-family: 'Times New Roman', Times, serif;}
+  #top{color:whitesmoke;border: 2px;justify-content: flex-end;order:-0}
   /* Links - change color on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+  .topnav a:hover {background-color: #ddd;color: black;}
 
-#slogan{
-    color:whitesmoke;
-    border: 2px;
-    padding-top: 6%;
-    padding-right: 10%;
-    /* border-color: pink; 
-    border-style: solid; */
-    justify-content: flex-end;
-    flex-direction: row;
-    order:1;
-    flex-wrap: nowrap;
-}
-#bottom{
-    color:whitesmoke;
-    border: 2px; 
-    /* border-color: pink; 
-    border-style: solid; */
-    justify-content: flex-end;
-    order:2;
-}
-#social{
-    color:whitesmoke;
-    /* border: 2px; 
-    border-color: pink; 
-    border-style: solid; */
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-items: center;
-
-}
-#social img{
-    flex-direction: row;
-    justify-content: space-around;
-    align-self: center;
-    margin-left: 6px;
-    margin-right: 6px;
-
-}
+#slogan{color:whitesmoke;border: 2px;padding-top: 6%;padding-right: 10%;justify-content: flex-end;flex-direction: row;order:1;flex-wrap: nowrap;}
+#bottom{color:whitesmoke;border: 2px;justify-content: flex-end;order:2;}
+#social{color:whitesmoke;justify-content: space-evenly;flex-direction: row;align-items: center;}
+#social img{flex-direction: row;justify-content: space-around;align-self: center;margin-left: 6px;margin-right: 6px;}
 /*Text*/
 h1{align-self: self-start; text-shadow: 2px 2px 2px black;}
 h2{align-self: self-start; text-shadow: 2px 2px 2px black;}
