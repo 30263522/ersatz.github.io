@@ -51,7 +51,7 @@ Footer{
     float: right;
     display: block;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 18px;
     text-decoration: none;
     border: 0px;
     background-color: #000000;
@@ -60,6 +60,7 @@ Footer{
   #themesButton:hover {
     background-color: #d8d5d7;
     color:#000000;
+    cursor: pointer;
   }
   #top{
     color:whitesmoke;
