@@ -51,16 +51,20 @@ Footer{
     float: right;
     display: block;
     text-align: center;
-    padding: 14px 18px;
+    padding: 14px 16px;
     text-decoration: none;
     border: 0px;
     background-color: #000000;
     color:#f2f2f2;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
   }
   #themesButton:hover {
     background-color: #d8d5d7;
     color:#000000;
     cursor: pointer;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
   }
   #top{
     color:whitesmoke;
