@@ -30,5 +30,5 @@ Footer{align-self: center; border-style:solid; border-width:8px; border-color:aq
 h1{align-self: self-start; text-shadow: 2px 2px 2px black;}
 h2{align-self: self-start; text-shadow: 2px 2px 2px black;}
 /*Forms*/
-input{width:15%; height:5%; cursor: pointer; box-shadow: 2px 2px 2px black; padding: 10px 12px; background-color: grey;border: #000000; border-radius: 4px;}
+input{width:15%; height:5%; cursor: pointer; box-shadow: 2px 2px 2px black; padding: 10px 12px; background-color: grey;border: #000000; border-radius: 4px; margin-bottom: 10px;}
 #submitMyAnswers{width:15%; height:5%; cursor: pointer; padding: 10px 12px; background-color: grey; border: #000000; border-radius: 4px;}
