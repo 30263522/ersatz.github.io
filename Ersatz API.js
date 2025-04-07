@@ -173,14 +173,14 @@ function saveLogins() {
 // Login Function
 function Login() {
   if (getDatabaseRule() == false) {
-    const findUserBox = document.getElementById('userBox').Value
-    const findPassBox = document.getElementById('passBox').Value
+    const findUserBox = document.getElementById('userBox').value
+    const findPassBox = document.getElementById('passBox').value
     if (findUserBox !=null && findPassBox !=null) {
       // Code
       loginSystem.forEach(currlgn => {
         if (findUserBox == currlgn.User) {
           if (findPassBox == currlgn.Pass) {
-            login = true
+            hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox.value, Pass:findPassBox.value}}
           }
           else {
             window.alert('Password is incorrect.')
