@@ -113,6 +113,7 @@ if (localStorage.getItem(loginsStorageName) !=null) {
   console.info('New user detected: No Logins saved. Default logins only.')
   initaliseLogins()
 }
+// End of Logins Retrival
 // Theme Execution - Function
 function executeTheme() { // Applies theme changes to the client side (HTML)
   themesArray.forEach(cls => { // cls represents object actively being looped through.
