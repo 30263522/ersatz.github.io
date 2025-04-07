@@ -151,11 +151,26 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 // Login Function
 function Login() {
   if (getDatabaseRule() == false) {
+    let login = false;
     const findUserBox = document.getElementById('userBox')
     const findPassBox = document.getElementById('passBox')
     if (findUserBox.Value !=null && findPassBox.Value !=null) {
       // Code
-
+      loginSystem.forEach(currlgn => {
+        if (findUserBox.Value == currlgn.User) {
+          if (findPassBox.Value == currlgn.Pass) {
+            // Login Success
+          }
+          else {
+            window.prompt('Password is incorrect.')
+            console.error('Password is incorrect.')
+          }
+        }
+        else {
+          window.prompt('Username is invalid.')
+          console.error('Username is invalid')
+        }
+      })
     }
     else {
       window.prompt(APIName+" Missing either Username or Password, Field box is empty. Login aborting...")
