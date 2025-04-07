@@ -148,7 +148,14 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 // Login Function
 function Login() {
   if (getDatabaseRule() == false) {
-    // JS Login
+    const findUserBox = document.getElementById('userBox')
+    const findPassBox = document.getElementById('passBox')
+    if (findUserBox.Value !=null && findPassBox.Value !=null) {
+      // Code
+    }
+    else {
+      window.prompt(APIName+" Missing either Username or Password, Field box is empty. Login aborting...")
+    }
   }
 }
 // End of Login Function
