@@ -47,13 +47,15 @@ Footer{
     text-decoration: none;
   }
 
-  .topnav #themesButton {
+  #themesButton {
     float: right;
     display: block;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     border: 0px;
+    background-color: #000000;
+    color:#f2f2f2;
   }
   #top{
     color:whitesmoke;
