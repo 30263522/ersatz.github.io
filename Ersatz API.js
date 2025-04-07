@@ -162,18 +162,18 @@ function Login(findUserBox, findPassBox) {
             login = true
           }
           else {
-            window.prompt('Password is incorrect.')
+            window.alert('Password is incorrect.')
             console.error('Password is incorrect.')
           }
         }
         else {
-          window.prompt('Username is invalid.')
+          window.alert('Username is invalid.')
           console.error('Username is invalid')
         }
       })
     }
     else {
-      window.prompt(APIName+" Missing either Username or Password, Field box is empty. Login aborting...")
+      window.alert(APIName+" Missing either Username or Password, Field box is empty. Login aborting...")
     }
   }
 }
