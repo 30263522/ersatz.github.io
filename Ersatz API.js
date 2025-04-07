@@ -105,8 +105,9 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 // End of Retrieve
 // Local Storage - Logins Retrieve
 if (localStorage.getItem(loginsStorageName) !=null) {
-  for (let a = 0; a<localStorage.getItem(loginsStorageName).length; a++) {
-    loginsDatabase.push(localStorage.getItem(loginsStorageName)[a])
+  let fetchedArray = JSON.parse(localStorage.getItem(loginsStorageName))
+  for (let a = 0; a<fetchedArray.length; a++) {
+    loginsDatabase.push(fetchedArray[a])
     initaliseLogins()
   }
 } else {
@@ -163,6 +164,12 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
   }
 }
 // End of Save Theme (Function)
+// Save Logins (Function)
+function saveLogins() {
+  initaliseLogins()
+  localStorage.setItem(loginsStorageName, JSON.stringify(loginsDatabase))
+}
+// End of Save Logins
 // Login Function
 function Login() {
   if (getDatabaseRule() == false) {
