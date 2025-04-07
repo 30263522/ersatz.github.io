@@ -71,11 +71,11 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
 // Login Page Rule Function
 function getDatabaseRule() {
   // Return Information: True = PhP, False = JavaScript, Error = Error
-  if (getURLElements().protocol = 'http') {
+  if (getURLElements().protocol = 'http:') {
     console.info('JS Database Management will be handled under the HTTP rule: PhP will handle database requests.')
     return true
   }
-  else if (getURLElements().protocol = 'https') {
+  else if (getURLElements().protocol = 'https:') {
     console.info('JS Database Management will be handled under the HTTPS rule: JavaScript will handle database requests.')
     return false
   }
@@ -155,7 +155,7 @@ function Login() {
     const findPassBox = document.getElementById('passBox')
     if (findUserBox.Value !=null && findPassBox.Value !=null) {
       // Code
-      
+
     }
     else {
       window.prompt(APIName+" Missing either Username or Password, Field box is empty. Login aborting...")
