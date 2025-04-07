@@ -65,6 +65,23 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
   }
 }
 // End of Redirect Function
+// Login Page Rule Function
+function getDatabaseRule() {
+  // Return Information: True = PhP, False = JavaScript, Error = Error
+  if (getURLElements().protocol = 'http') {
+    console.info('JS Database Management will be handled under the HTTP rule: PhP will handle database requests.')
+    return true
+  }
+  else if (getURLElements().protocol = 'https') {
+    console.info('JS Database Management will be handled under the HTTPS rule: JavaScript will handle database requests.')
+    return false
+  }
+  else {
+    console.error('Database Type Error: '+getURLElements().protocol,' is invalid.')
+    return error
+  }
+}
+// End of Login Page Rule function
 // End of Global Functions
 
 // Theme Management
@@ -128,6 +145,13 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
   }
 }
 // End of Save Theme (Function)
+// Login Function
+function Login() {
+  if (getDatabaseRule() == false) {
+    // JS Login
+  }
+}
+// End of Login Function
 
 // Error Handling
 // Initiate
@@ -235,5 +259,5 @@ Current URL: ${getURLElements().href}
 Current Host: ${getURLElements().host}
 Current HostName: ${getURLElements().hostname}
 Current Path: ${getURLElements().pathname}
-Current Protocal: ${getURLElements().protocol}
+Current Protocol: ${getURLElements().protocol}
 `)
