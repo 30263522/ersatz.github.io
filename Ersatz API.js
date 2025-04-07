@@ -37,7 +37,7 @@ let loginsDatabase = [
   {User:'Template', Pass:'Template'},
   {User:'Template', Pass:'Template'}
 ]
-const Database = [] // JavaScript database array.
+const Database = [] // JavaScript database array. 
 
 // Versions
 function logAPIVersion() {
