@@ -103,6 +103,16 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
   executeTheme()
 }
 // End of Retrieve
+// Local Storage - Logins Retrieve
+if (localStorage.getItem(loginsStorageName) !=null) {
+  for (let a = 0; a<localStorage.getItem(loginsStorageName).length; a++) {
+    loginsDatabase.push(localStorage.getItem(loginsStorageName)[a])
+    initaliseLogins()
+  }
+} else {
+  console.info('New user detected: No Logins saved. Default logins only.')
+  initaliseLogins()
+}
 // Theme Execution - Function
 function executeTheme() { // Applies theme changes to the client side (HTML)
   themesArray.forEach(cls => { // cls represents object actively being looped through.
@@ -184,10 +194,20 @@ function Login() {
 // Create Account
 // End
 // Login Initalisation
-function loginInitalisation() {
+function initaliseLogins() {
   // Remove duplicates
   let oldArr = loginsDatabase
-  loginsDatabase = [...new Set(oldArr)];
+  let uniqueLogins = [];
+  let uniqueObjects = {};
+
+  oldArr.forEach(function(value) {
+    if (!uniqueObjects[value]) {
+      uniqueLogins.push(value);
+      uniqueObjects[value] = true;
+  }
+  loginsDatabase = uniqueLogins
+});
+// End of Removing Duplicates
 }
 // End
 
