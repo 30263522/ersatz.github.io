@@ -57,6 +57,10 @@ Footer{
     background-color: #000000;
     color:#f2f2f2;
   }
+  #themesButton :hover {
+    background-color: rgb(196, 193, 193);
+    color:#000000;
+  }
   #top{
     color:whitesmoke;
     border: 2px; 
