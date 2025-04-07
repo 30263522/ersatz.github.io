@@ -178,6 +178,15 @@ function Login() {
   }
 }
 // End of Login Function
+// Create Account
+// End
+// Login Initalisation
+function loginInitalisation() {
+  for (let L = 0; L<localStorage.getItem('loginSystem').length; L++) {
+    loginSystem.push(localStorage.getItem('loginSystem')[L])
+  }
+}
+// End
 
 // Error Handling
 // Initiate
