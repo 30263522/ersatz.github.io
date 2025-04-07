@@ -94,6 +94,9 @@ function getDatabaseRule() {
 
 // Theme Management
 let themeVar = '' // Local variable used for active theme.
+
+// AutoExec 
+
 // Theme Save - Retrieve
 if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is already saved in localstorage, if so, applies it.
   themeVar = localStorage.getItem(themeStorageName)
@@ -116,6 +119,15 @@ if (localStorage.getItem(loginsStorageName) !=null) {
   initaliseLogins()
 }
 // End of Logins Retrival
+// Login Change
+let parsedALSN = JSON.parse(localStorage.getItem(activeLoginStorageName))
+if (localStorage.getItem(activeLoginStorageName) !=null && parsedALSN.State == true) {
+  const findButton = document.getElementById('loginPageButton')
+  
+}
+
+// End of AutoExec
+
 // Theme Execution - Function
 function executeTheme() { // Applies theme changes to the client side (HTML)
   themesArray.forEach(cls => { // cls represents object actively being looped through.
