@@ -151,7 +151,7 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 // Login Function
 function Login(findUserBox, findPassBox) {
   if (getDatabaseRule() == false) {
-    let login = false;
+    let login;
     // const findUserBox = document.getElementById('userBox')
     // const findPassBox = document.getElementById('passBox')
     if (findUserBox !=null && findPassBox !=null) {
@@ -159,7 +159,7 @@ function Login(findUserBox, findPassBox) {
       loginSystem.forEach(currlgn => {
         if (findUserBox == currlgn.User) {
           if (findPassBox == currlgn.Pass) {
-            // Login Success
+            login = true
           }
           else {
             window.prompt('Password is incorrect.')
