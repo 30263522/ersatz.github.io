@@ -71,11 +71,11 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
 // Login Page Rule Function
 function getDatabaseRule() {
   // Return Information: True = PhP, False = JavaScript, Error = Error
-  if (getURLElements().protocol = 'http:') {
+  if (getURLElements().protocol == 'http:') {
     console.info('JS Database Management will be handled under the HTTP rule: PhP will handle database requests.')
     return true
   }
-  else if (getURLElements().protocol = 'https:') {
+  else if (getURLElements().protocol == 'https:') {
     console.info('JS Database Management will be handled under the HTTPS rule: JavaScript will handle database requests.')
     return false
   }
@@ -149,16 +149,16 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 }
 // End of Save Theme (Function)
 // Login Function
-function Login() {
+function Login(findUserBox, findPassBox) {
   if (getDatabaseRule() == false) {
     let login = false;
-    const findUserBox = document.getElementById('userBox')
-    const findPassBox = document.getElementById('passBox')
-    if (findUserBox.Value !=null && findPassBox.Value !=null) {
+    // const findUserBox = document.getElementById('userBox')
+    // const findPassBox = document.getElementById('passBox')
+    if (findUserBox !=null && findPassBox !=null) {
       // Code
       loginSystem.forEach(currlgn => {
-        if (findUserBox.Value == currlgn.User) {
-          if (findPassBox.Value == currlgn.Pass) {
+        if (findUserBox == currlgn.User) {
+          if (findPassBox == currlgn.Pass) {
             // Login Success
           }
           else {
