@@ -13,7 +13,7 @@ For use within Ersatz Enterprises Website
 Home Page must be redirect "/"
 Each individual page should be a folder with "index.html" inside for "/pagename" redirect.
 Pages: Home (/), Contact Us (/Contact-Us), About Us (/About-Us), Banks (/Banks), Error (/err or /Error) and Login (/Login) / Create Account (/Login/Create)
-Version: */ let APIVersion = 0.6+"cBeta"
+Version: */ let APIVersion = 0.7+"Beta"
 const APIName = 'Ersatz Enterprises API'
 
 // Configuration Variables
@@ -30,6 +30,7 @@ const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contracte
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
 const loginsStorageName = 'EE-Logins' // localstorage name used for saving loginsDatabase
+const activeLoginStorageName = 'EE-Login-Active' // localstorage name used for saving active login information for user.
 let hasLoggedIn = {State: false, UsedCredentials: {User:"", Pass:""}}
 const baseURL = "ersatz.github.io"
 let loginsDatabase = [
@@ -168,8 +169,19 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 function saveLogins() {
   initaliseLogins()
   localStorage.setItem(loginsStorageName, JSON.stringify(loginsDatabase))
+  if (hasLoggedIn.State == true) {
+    localStorage.setItem(activeLoginStorageName, JSON.stringify(activeLoginStorageName))
+  }
 }
 // End of Save Logins
+// Retrive Active Login
+function getActiveLogin() {
+  if (localStorage.getItem(activeLoginStorageName) !=null) {
+    let actLogin = JSON.parse(JSON.getItem(activeLoginStorageName))
+    hasLoggedIn = actLogin
+  }
+}
+// End of Retrive Active Login
 // Login Function
 function Login() {
   if (getDatabaseRule() == false) {
@@ -177,10 +189,11 @@ function Login() {
     const findPassBox = document.getElementById('passBox').value
     if (findUserBox !=null && findPassBox !=null) {
       // Code
-      loginSystem.forEach(currlgn => {
+      loginsDatabase.forEach(currlgn => {
         if (findUserBox == currlgn.User) {
           if (findPassBox == currlgn.Pass) {
             hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:findPassBox}}
+            redirectURL(baseURL, 'replace')
           }
           else {
             window.alert('Password is incorrect.')
