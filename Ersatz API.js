@@ -30,6 +30,9 @@ const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contracte
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
 const baseURL = "ersatz.github.io"
+const loginSystem = [
+  {User:'Template', Pass:'Template'}
+]
 const Database = [] // JavaScript database array.
 
 // Versions
@@ -152,6 +155,7 @@ function Login() {
     const findPassBox = document.getElementById('passBox')
     if (findUserBox.Value !=null && findPassBox.Value !=null) {
       // Code
+      
     }
     else {
       window.prompt(APIName+" Missing either Username or Password, Field box is empty. Login aborting...")
