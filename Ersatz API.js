@@ -13,7 +13,7 @@ For use within Ersatz Enterprises Website
 Home Page must be redirect "/"
 Each individual page should be a folder with "index.html" inside for "/pagename" redirect.
 Pages: Home (/), Contact Us (/Contact-Us), About Us (/About-Us), Banks (/Banks), Error (/err or /Error) and Login (/Login) / Create Account (/Login/Create)
-Version: */ let APIVersion = 0.6+"bBeta"
+Version: */ let APIVersion = 0.6+"cBeta"
 const APIName = 'Ersatz Enterprises API'
 
 // Configuration Variables
@@ -29,7 +29,7 @@ const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contracte
 ]
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
-const loginsStorageName = 'EE-Logins'
+const loginsStorageName = 'EE-Logins' // localstorage name used for saving loginsDatabase
 let hasLoggedIn = {State: false, UsedCredentials: {User:"", Pass:""}}
 const baseURL = "ersatz.github.io"
 let loginsDatabase = [
@@ -217,6 +217,14 @@ function initaliseLogins() {
 });
 // End of Removing Duplicates
 }
+// End for initaliseLogins
+// Login Page Initalisation
+function initaliseLoginPage() {
+  document.getElementById('submitMyAnswers').addEventListener('click', function() {
+    Login()
+  })
+}
+// End of Login Page Initalisation
 // End
 
 // Error Handling
