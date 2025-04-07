@@ -29,9 +29,12 @@ const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contracte
 ]
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
-let login = false;
+const loginsStorageName = 'EE-Logins'
+let hasLoggedIn = {State: false, UsedCredentials: {User:"", Pass:""}}
 const baseURL = "ersatz.github.io"
-const loginSystem = [
+let loginsDatabase = [
+  {User:'Template', Pass:'Template'},
+  {User:'Template', Pass:'Template'},
   {User:'Template', Pass:'Template'}
 ]
 const Database = [] // JavaScript database array.
@@ -65,7 +68,7 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
     else if (redirectType=='newTab') {window.open(URL, '_blank')}
     else if (redirectType=='newTab-F') {window.open(URL, '_blank').focus()}
   } else { // Prevents function running if no URL.
-    console.error('urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
+    console.error(APIName+': urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
   }
 }
 // End of Redirect Function
@@ -182,9 +185,9 @@ function Login() {
 // End
 // Login Initalisation
 function loginInitalisation() {
-  for (let L = 0; L<localStorage.getItem('loginSystem').length; L++) {
-    loginSystem.push(localStorage.getItem('loginSystem')[L])
-  }
+  // Remove duplicates
+  let oldArr = loginsDatabase
+  loginsDatabase = [...new Set(oldArr)];
 }
 // End
 
