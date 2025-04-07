@@ -29,6 +29,7 @@ const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contracte
 ]
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
+let login;
 const baseURL = "ersatz.github.io"
 const loginSystem = [
   {User:'Template', Pass:'Template'}
@@ -151,7 +152,6 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 // Login Function
 function Login(findUserBox, findPassBox) {
   if (getDatabaseRule() == false) {
-    let login;
     // const findUserBox = document.getElementById('userBox')
     // const findPassBox = document.getElementById('passBox')
     if (findUserBox !=null && findPassBox !=null) {
