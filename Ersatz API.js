@@ -330,6 +330,9 @@ function initialiseThemeButton() {
      // Code for dehover
   })
 }
+function loginButton() {
+  
+}
 // End of Button Handlers
 
 
