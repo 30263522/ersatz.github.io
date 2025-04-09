@@ -163,10 +163,6 @@ function executeTheme() { // Applies theme changes to the client side (HTML)
   }})} /*END of ExecuteTheme function*/
 // End of Theme Execution
 
-// Theme Button - Function
-// To be added
-// End
-
 // Update avaliable themes
 // To be added
 // End
@@ -331,7 +327,7 @@ function initialiseThemeButton() {
   })
 }
 function loginButton() {
-  
+
 }
 // End of Button Handlers
 
