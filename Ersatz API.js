@@ -173,7 +173,6 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 // End of Save Theme (Function)
 // Save Logins (Function)
 function saveLogins() {
-  initaliseLogins()
   localStorage.setItem(loginsStorageName, JSON.stringify(loginsDatabase))
   if (hasLoggedIn.State == true) {
     localStorage.setItem(activeLoginStorageName, JSON.stringify(hasLoggedIn))
