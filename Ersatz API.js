@@ -199,7 +199,7 @@ function Login() {
         if (findUserBox == currlgn.User) {
           if (findPassBox == currlgn.Pass) {
             hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:findPassBox}}
-            redirectURL(baseURL, 'replace')
+            redirectURL("/"+baseURL, 'replace')
           }
           else {
             window.alert('Password is incorrect.')
