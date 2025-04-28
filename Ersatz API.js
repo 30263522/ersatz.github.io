@@ -13,7 +13,7 @@ For use within Ersatz Enterprises Website
 Home Page must be redirect "/"
 Each individual page should be a folder with "index.html" inside for "/pagename" redirect.
 Pages: Home (/), Contact Us (/Contact-Us), About Us (/About-Us), Banks (/Banks), Error (/err or /Error) and Login (/Login) / Create Account (/Login/Create)
-Version: */ let APIVersion = 0.7+"bBeta"
+Version: */ let APIVersion = 0.7+"cBeta"
 const APIName = 'Ersatz Enterprises API'
 
 // Configuration Variables
@@ -218,6 +218,19 @@ function Login() {
 }
 // End of Login Function
 // Create Account
+function createAccount() {
+  if (getDatabaseRule() == false) {
+    const findNewUserBox = document.getElementById('newUser').value
+    const findNewPassBox = document.getElementById('newPass').value
+    if (findNewUserBox !=null && findNewPassBox !=null) {
+      loginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
+      saveLogins()
+    }
+    else {
+      window.alert(APIName+": Missing either Username or Password, Field box is empty. Creation aborting...")
+    }
+  }
+}
 // End
 // Login Initalisation
 function initaliseLogins() {
