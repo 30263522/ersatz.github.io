@@ -240,9 +240,9 @@ function initaliseLogins() {
   let uniqueObjects = {};
 
   oldArr.forEach(function(value) {
-    if (!uniqueObjects[value.User]) {
-      uniqueLogins.push(value.User);
-      uniqueObjects[value.User] = true;
+    if (!uniqueObjects[value]) {
+      uniqueLogins.push(value);
+      uniqueObjects[value] = true;
   }
   loginsDatabase = uniqueLogins
 });
