@@ -34,7 +34,7 @@ const activeLoginStorageName = 'EE-Login-Active' // localstorage name used for s
 let hasLoggedIn = {State: false, UsedCredentials: {User:"", Pass:""}}
 const baseURL = "ersatz.github.io"
 let loginsDatabase = [
-  {User:'User', Pass:'User'},
+  {User:'User', Pass:'UwUUwUUwUUwUUwUUwUUwUUwUUwUUwU'},
 ]
 const Database = [] // JavaScript database array. 
 
