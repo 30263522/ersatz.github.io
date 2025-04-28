@@ -257,7 +257,7 @@ function initaliseLoginPage() {
   })
 }
 // End of Login Page Initalisation
-function initaliseLoginPage() {
+function initaliseCreatePage() {
   document.getElementById('newSub').addEventListener('click', function() {
     createAccount()
   })
