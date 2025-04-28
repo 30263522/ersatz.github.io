@@ -223,7 +223,7 @@ function createAccount() {
     const findNewUserBox = document.getElementById('newUser').value
     const findNewPassBox = document.getElementById('newPass').value
     if (findNewUserBox !=null && findNewPassBox !=null) {
-      loginsDatabase.push({User: findNewUserBox, Pass: findNewPassBox})
+      loginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
       hasLoggedIn = {State: true, UsedCredentials: {User:findNewUserBox, Pass:findNewPassBox}}
       saveLogins()
     }
