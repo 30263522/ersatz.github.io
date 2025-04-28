@@ -205,17 +205,15 @@ function Login() {
           }
           else {
             window.alert('Password is incorrect.')
-            console.error('Password is incorrect.')
           }
         }
         else {
           window.alert('Username is invalid.')
-          console.error('Username is invalid')
         }
       })
     }
     else {
-      window.alert(APIName+" Missing either Username or Password, Field box is empty. Login aborting...")
+      window.alert(APIName+": Missing either Username or Password, Field box is empty. Login aborting...")
     }
   }
 }
