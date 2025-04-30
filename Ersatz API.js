@@ -407,6 +407,7 @@ function loginButton() {
 
 if (getURLElements().protocol == 'http:') {
   window.alert('410 - Unsupported Protocol. Currently HTTP support is disabled and access has been denied by API')
+  window.replace('https://google.com')
 }
 
 
