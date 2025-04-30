@@ -69,17 +69,41 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
   } else { // Prevents function running if no URL.
     console.error(APIName+': urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
   }
+  if (getURLElements().protocol = 'http') { // Required for LiveServer
+    if (URL !=null) { // Ensures URL has a parameter, or prevents the function running.
+      if (redirectType=='replace') {location.replace(URL)}
+      else if (redirectType=='default-E') {location.assign(URL)}
+      else if (redirectType=='newTab-E') {window.open(URL, '_blank')}
+      else if (redirectType=='newTab-F-E') {window.open(URL, '_blank').focus()}
+      else if (redirectType=='default') {location.assign(URL)}
+      else if (redirectType=='newTab') {window.open(URL, '_blank')}
+      else if (redirectType=='newTab-F') {window.open(URL, '_blank').focus()}
+    } else { // Prevents function running if no URL.
+      console.error(APIName+': urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
+    }}
+  else {
+    if (URL !=null) { // Ensures URL has a parameter, or prevents the function running.
+      if (redirectType=='replace-E') {location.replace(URL)}
+      else if (redirectType=='default-E') {location.assign(URL)}
+      else if (redirectType=='newTab-E') {window.open(URL, '_blank')}
+      else if (redirectType=='newTab-F-E') {window.open(URL, '_blank').focus()}
+      else if (redirectType=='default') {location.assign("/"+baseURL+URL)}
+      else if (redirectType=='replace') {location.replace("/"+baseURL+URL)}
+      else if (redirectType=='newTab') {window.open("/"+baseURL+URL, '_blank')}
+      else if (redirectType=='newTab-F') {window.open('/'+baseURL+URL)}
+    } else { // Prevents function running if no URL.
+      console.error(APIName+': urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
+    }
+  }
 }
 // End of Redirect Function
 // Login Page Rule Function
 function getDatabaseRule() {
   // Return Information: True = PhP, False = JavaScript, Error = Error
   if (getURLElements().protocol == 'http:') {
-    console.info('JS Database Management will be handled under the HTTP rule: PhP will handle database requests.')
     return true
   }
   else if (getURLElements().protocol == 'https:') {
-    console.info('JS Database Management will be handled under the HTTPS rule: JavaScript will handle database requests.')
     return false
   }
   else {
@@ -217,7 +241,7 @@ function Login() {
           wronguser=false
           if (findPassBox == currlgn.Pass) {
             hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:findPassBox}}
-            redirectURL("/"+baseURL, 'replace')
+            redirectURL('/', 'replace')
             saveLogins()
           }
           else {
@@ -253,7 +277,7 @@ function createAccount() {
         loginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
         hasLoggedIn = {State: true, UsedCredentials: {User:findNewUserBox, Pass:findNewPassBox}}
         saveLogins()
-        redirectURL("/"+baseURL, 'replace')
+        redirectURL('/', 'replace')
       }
     }
     else {
@@ -283,7 +307,7 @@ function initaliseLogins() {
 function initaliseLoginPage() {
   if (hasLoggedIn.State == true) {
     window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
-    redirectURL("/"+baseURL, 'replace')
+    redirectURL('/', 'replace')
   }
   document.getElementById('submitMyAnswers').addEventListener('click', function() {
     Login()
@@ -293,7 +317,7 @@ function initaliseLoginPage() {
 function initaliseCreatePage() {
   if (hasLoggedIn.State == true) {
     window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
-    redirectURL("/"+baseURL, 'replace')
+    redirectURL('/', 'replace')
   }
   document.getElementById('newSub').addEventListener('click', function() {
     createAccount()
@@ -311,10 +335,10 @@ function initiateError(err, errType, returnAddress) { // Called with params in t
     if (returnAddress !=null) {
       localStorage.setItem('EEA-errHandle-Return', returnAddress)
     }  else {
-      returnAddress = '/'+baseURL
+      returnAddress = '/'
       localStorage.setItem('EEA-errHandle-Return', returnAddress)
     }
-    location.replace("/"+baseURL+"/Error") // Sends user to Error web page.
+    redirectURL('/Error', 'replace')
   } else {
     console.error('initiateError() called, but no Error provided.')
   }
@@ -327,7 +351,7 @@ function initialiseErrorPage() { // Called onload within Error page. No params r
     // On Error page
   } else {
     window.alert(APIName+': Failed to initalise Error page. This may occur either because there is no active Error or page is not an Error page.')
-    redirectURL('/'+baseURL, 'replace')
+    redirectURL('/', 'replace')
   }
 }
 // End of Initalise Error Page
@@ -339,7 +363,7 @@ function uninitialiseErrorPage() { // Called onunload within Error page. No para
   }
   else {
     window.alert(APIName+': Failed to uninitalise Error page. This may occur either because there is no active Error or page is not an Error page.')
-    redirectURL('/'+baseURL, 'replace')
+    redirectURL('/', 'replace')
   }
 }
 // End of Error Handling
@@ -353,27 +377,27 @@ function initialiseSocialButtons() {
   initaliseLoggedIn()
   // Login Button
   document.getElementById('loginPageButton').addEventListener('click', function(){
-    redirectURL("/"+baseURL+"/Login", 'default')
+    redirectURL("/Login", 'default')
 })
 // End of Login Button
 // YouTube
   document.getElementById('YT').addEventListener('click', function(){
-    redirectURL(youtubeURL, 'newTab-F')
+    redirectURL(youtubeURL, 'newTab-F-E')
 })
 // End of YouTube
 // Bluesky
   document.getElementById('BS').addEventListener('click', function(){
-    redirectURL(blueskyURL, 'newTab-F')
+    redirectURL(blueskyURL, 'newTab-F-E')
 })
 // End of Bluesky
 // Whatsapp
   document.getElementById('WA').addEventListener('click', function(){
-    redirectURL(whatsappURL, 'newTab-F')
+    redirectURL(whatsappURL, 'newTab-F-E')
 })
 // End of WhatsApp
 // TikTok
   document.getElementById('TT').addEventListener('click', function(){
-    redirectURL(tiktokURL, 'newTab-F')
+    redirectURL(tiktokURL, 'newTab-F-E')
 // End of TikTok  
 })
 }
