@@ -405,6 +405,10 @@ function loginButton() {
 }
 // End of Button Handlers
 
+if (getURLElements().protocol == 'http:') {
+  window.alert('410 - Unsupported Protocol. Currently HTTP support is disabled and access has been denied by API')
+}
+
 
 // Console - Creditor
 console.warn(`
