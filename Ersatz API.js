@@ -214,6 +214,7 @@ function Login() {
       // Code
       loginsDatabase.forEach(currlgn => {
         if (findUserBox == currlgn.User) {
+          wronguser=false
           if (findPassBox == currlgn.Pass) {
             hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:findPassBox}}
             redirectURL("/"+baseURL, 'replace')
