@@ -59,16 +59,6 @@ function getURLElements() {
 // End of Get URL Elements
 // Redirect Function
 function redirectURL(URL, redirectType) { // Used for page redirects across the API.
-  if (redirectType !=null) {redirectType=redirectType} // Checks if redirectType has a value
-  else {redirectType='default', console.warn('urlRedirect() called without redirectType, Defaulted to redirectType: Default; Provide this parameter for custom type.')} // Sets default if no value
-  if (URL !=null) { // Ensures URL has a parameter, or prevents the function running.
-    if (redirectType=='replace') {location.replace(URL)}
-    else if (redirectType=='default') {location.assign(URL)}
-    else if (redirectType=='newTab') {window.open(URL, '_blank')}
-    else if (redirectType=='newTab-F') {window.open(URL, '_blank').focus()}
-  } else { // Prevents function running if no URL.
-    console.error(APIName+': urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
-  }
   if (getURLElements().protocol = 'http') { // Required for LiveServer
     if (URL !=null) { // Ensures URL has a parameter, or prevents the function running.
       if (redirectType=='replace') {location.replace(URL)}
