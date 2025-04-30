@@ -123,6 +123,17 @@ if (localStorage.getItem(activeLoginStorageName) !=null && parsedALSN.State == t
   
 }
 
+function initaliseLoggedIn() {
+  const findAccountTopbar = document.getElementById('account')
+  if (hasLoggedIn.State == true) {
+    findAccountTopbar.innerText = hasLoggedIn.UsedCredentials.User
+    findAccountTopbar.style.visibility = 'show'
+  }
+  findAccountTopbar.addEventListener('click', function() {
+    console.log('Signing out...')
+  })
+}
+
 // End of AutoExec
 
 // Theme Execution - Function
