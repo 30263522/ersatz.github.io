@@ -340,6 +340,7 @@ function initialiseSocialButtons() {
   const blueskyURL = 'https://bsky.app/profile/ErsatzEnterprises.bsky.social'
   const whatsappURL = 'https://whatsapp.com/download'
   const tiktokURL = 'https://tiktok.com/@ErsatzEnterprises'
+  initaliseLoggedIn()
   // Login Button
   document.getElementById('loginPageButton').addEventListener('click', function(){
     redirectURL("/"+baseURL+"/Login", 'default')
