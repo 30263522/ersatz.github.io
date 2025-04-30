@@ -78,10 +78,10 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
       else if (redirectType=='default-E') {location.assign(URL)}
       else if (redirectType=='newTab-E') {window.open(URL, '_blank')}
       else if (redirectType=='newTab-F-E') {window.open(URL, '_blank').focus()}
-      else if (redirectType=='default') {location.assign("/"+baseURL+URL)}
+      else if (redirectType=='default') {location.assign("/"+baseURL+`${URL}`)}
       else if (redirectType=='replace') {location.replace("/"+baseURL+`${URL}`)}
-      else if (redirectType=='newTab') {window.open("/"+baseURL+URL, '_blank')}
-      else if (redirectType=='newTab-F') {window.open('/'+baseURL+URL)}
+      else if (redirectType=='newTab') {window.open("/"+baseURL+`${URL}`, '_blank')}
+      else if (redirectType=='newTab-F') {window.open("/"+baseURL+`${URL}`).focus()}
     } else { // Prevents function running if no URL.
       console.error(APIName+': urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
     }
@@ -368,7 +368,7 @@ function initialiseSocialButtons() {
   initaliseLoggedIn()
   // Login Button
   document.getElementById('loginPageButton').addEventListener('click', function(){
-    redirectURL('/Login', 'replace')
+    redirectURL('/Login', 'default')
 })
 // End of Login Button
 // YouTube
