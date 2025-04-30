@@ -61,10 +61,11 @@ function getURLElements() {
 function redirectURL(URL, redirectType) { // Used for page redirects across the API.
   if (getURLElements().protocol = 'http:') { // Required for LiveServer
     if (URL !=null) { // Ensures URL has a parameter, or prevents the function running.
-      if (redirectType=='replace') {location.replace(URL)}
+      if (redirectType=='replace-E') {location.replace(URL)}
       else if (redirectType=='default-E') {location.assign(URL)}
       else if (redirectType=='newTab-E') {window.open(URL, '_blank')}
       else if (redirectType=='newTab-F-E') {window.open(URL, '_blank').focus()}
+      else if (redirectType=='replace') {location.replace("/"+baseURL+`${URL}`)}
       else if (redirectType=='default') {location.assign(URL)}
       else if (redirectType=='newTab') {window.open(URL, '_blank')}
       else if (redirectType=='newTab-F') {window.open(URL, '_blank').focus()}
