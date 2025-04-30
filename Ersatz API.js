@@ -78,7 +78,7 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
       else if (redirectType=='newTab-E') {window.open(URL, '_blank')}
       else if (redirectType=='newTab-F-E') {window.open(URL, '_blank').focus()}
       else if (redirectType=='default') {location.assign("/"+baseURL+URL)}
-      else if (redirectType=='replace') {location.replace("/"+baseURL+URL)}
+      else if (redirectType=='replace') {location.replace("/"+baseURL+`${URL}`)}
       else if (redirectType=='newTab') {window.open("/"+baseURL+URL, '_blank')}
       else if (redirectType=='newTab-F') {window.open('/'+baseURL+URL)}
     } else { // Prevents function running if no URL.
