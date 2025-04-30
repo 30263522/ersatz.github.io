@@ -367,7 +367,7 @@ function initialiseSocialButtons() {
   initaliseLoggedIn()
   // Login Button
   document.getElementById('loginPageButton').addEventListener('click', function(){
-    redirectURL("/Login", 'default')
+    redirectURL('/Login', 'default')
 })
 // End of Login Button
 // YouTube
