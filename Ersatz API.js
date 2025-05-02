@@ -393,12 +393,6 @@ function loginButton() {
 }
 // End of Button Handlers
 
-if (getURLElements().protocol == 'http:') {
-  window.alert('410 - Unsupported Protocol. Currently HTTP support is disabled and access has been denied by API')
-  window.replace('https://google.com')
-}
-
-
 // Console - Creditor
 console.warn(`
 ${APIName} (Version: ${APIVersion}) successfully started running in the background;
