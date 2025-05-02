@@ -66,6 +66,7 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
     // HTTPS
     if (redirectType=='default') {location.assign('/'+subURL+URL)}
     if (redirectType=='replace') {location.replace('/'+subURL+URL)}
+    if (redirectType=='returnAsset') {return baseURL+URL}
     if (redirectType=='newTab-E') {window.open(URL, '_blank').focus()}
   }
   else if (getDatabaseRule() == true) {
