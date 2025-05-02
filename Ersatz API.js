@@ -60,32 +60,11 @@ function getURLElements() {
 // End of Get URL Elements
 // Redirect Function
 function redirectURL(URL, redirectType) { // Used for page redirects across the API.
-  if (getURLElements().protocol = 'http:') { // Required for LiveServer
-    if (URL !=null) { // Ensures URL has a parameter, or prevents the function running.
-      if (redirectType=='replace-E') {location.replace(URL)}
-      else if (redirectType=='default-E') {location.assign(URL)}
-      else if (redirectType=='newTab-E') {window.open(URL, '_blank')}
-      else if (redirectType=='newTab-F-E') {window.open(URL, '_blank').focus()}
-      else if (redirectType=='replace') {location.replace("/"+baseURL+`${URL}`)}
-      else if (redirectType=='default') {location.assign(URL)}
-      else if (redirectType=='newTab') {window.open(URL, '_blank')}
-      else if (redirectType=='newTab-F') {window.open(URL, '_blank').focus()}
-    } else { // Prevents function running if no URL.
-      console.error(APIName+': urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
-    }}
-  else {
-    if (URL !=null) { // Ensures URL has a parameter, or prevents the function running.
-      if (redirectType=='replace-E') {location.replace(URL)}
-      else if (redirectType=='default-E') {location.assign(URL)}
-      else if (redirectType=='newTab-E') {window.open(URL, '_blank')}
-      else if (redirectType=='newTab-F-E') {window.open(URL, '_blank').focus()}
-      else if (redirectType=='default') {location.assign("/"+subURL+URL)}
-      else if (redirectType=='replace') {location.replace("/"+baseURL+`${URL}`)}
-      else if (redirectType=='newTab') {window.open("/"+baseURL+`${URL}`, '_blank')}
-      else if (redirectType=='newTab-F') {window.open("/"+baseURL+`${URL}`).focus()}
-    } else { // Prevents function running if no URL.
-      console.error(APIName+': urlRedirect() called expecting parameter "URL" but "URL" not provided. urlRedirect-Types: replace, default, newTab, newTab-F')
-    }
+  if (redirectType !=null) {redirectType=redirectType}
+  else {redirectType='default'}
+  if (getDatabaseRule() == false) {
+    // HTTPS
+    if (redirectType=='default') {location.assign('/'+URL)}
   }
 }
 // End of Redirect Function
