@@ -60,7 +60,6 @@ function getURLElements() {
 // End of Get URL Elements
 // Redirect Function
 function redirectURL(URL, redirectType) { // Used for page redirects across the API.
-  URL = toString(URL)
   if (getURLElements().protocol = 'http:') { // Required for LiveServer
     if (URL !=null) { // Ensures URL has a parameter, or prevents the function running.
       if (redirectType=='replace-E') {location.replace(URL)}
