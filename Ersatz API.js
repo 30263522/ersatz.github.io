@@ -33,7 +33,7 @@ const loginsStorageName = 'EE-Logins' // localstorage name used for saving login
 const activeLoginStorageName = 'EE-Login-Active' // localstorage name used for saving active login information for user.
 let hasLoggedIn = {State: false, UsedCredentials: {User:"", Pass:""}}
 const subURL = "ersatz.github.io"
-const baseURL = "https://30263522.github.io/ersatz.github.io/"
+const baseURL = "https://30263522.github.io/ersatz.github.io"
 let loginsDatabase = [
   {User:'User', Pass:'User'},
 ]
@@ -79,7 +79,7 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
       else if (redirectType=='default-E') {location.assign(URL)}
       else if (redirectType=='newTab-E') {window.open(URL, '_blank')}
       else if (redirectType=='newTab-F-E') {window.open(URL, '_blank').focus()}
-      else if (redirectType=='default') {window.href = baseURL+URL}
+      else if (redirectType=='default') {window.open(baseURL+URL, '_self')}
       else if (redirectType=='replace') {location.replace("/"+baseURL+`${URL}`)}
       else if (redirectType=='newTab') {window.open("/"+baseURL+`${URL}`, '_blank')}
       else if (redirectType=='newTab-F') {window.open("/"+baseURL+`${URL}`).focus()}
@@ -369,7 +369,7 @@ function initialiseSocialButtons() {
   initaliseLoggedIn()
   // Login Button
   document.getElementById('loginPageButton').addEventListener('click', function(){
-    redirectURL('Login', 'default')
+    redirectURL('/Login', 'default')
 })
 // End of Login Button
 // YouTube
