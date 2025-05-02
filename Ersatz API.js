@@ -32,7 +32,8 @@ const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
 const loginsStorageName = 'EE-Logins' // localstorage name used for saving loginsDatabase
 const activeLoginStorageName = 'EE-Login-Active' // localstorage name used for saving active login information for user.
 let hasLoggedIn = {State: false, UsedCredentials: {User:"", Pass:""}}
-const baseURL = "ersatz.github.io"
+const subURL = "ersatz.github.io"
+const baseURL = "https://30263522.github.io/ersatz.github.io/"
 let loginsDatabase = [
   {User:'User', Pass:'User'},
 ]
