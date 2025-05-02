@@ -26,10 +26,10 @@
         <h2>A bank for the people first!</h2>
         </div>
         
-        <form id="myFormForEmailsIEnjoyPuttingInTooManyForms">
+        <form id="myFormForEmailsIEnjoyPuttingInTooManyForms" onsubmit="event.preventDefault()">
             E-mail: <input type="email" id="myMail"> <br>
             Message: <input type="textarea" id="myMessage" rows="20" cols="40">
-            <button id="buttonUwU" onsubmit="event.preventDefault()" onclick="mailMe()"> Click here to send an Email</button>
+            <button id="buttonUwU" onclick="mailMe()"> Click here to send an Email</button>
 
           </form>
     
