@@ -64,7 +64,7 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
   else {redirectType='default'}
   if (getDatabaseRule() == false) {
     // HTTPS
-    if (redirectType=='default') {location.assign('/'+URL)}
+    if (redirectType=='default') {location.assign('/'+subURL+URL)}
   }
 }
 // End of Redirect Function
