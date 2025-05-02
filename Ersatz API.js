@@ -356,27 +356,27 @@ function initialiseSocialButtons() {
   initaliseLoggedIn()
   // Login Button
   document.getElementById('loginPageButton').addEventListener('click', function(){
-    redirectURL('/Login', 'default')
+    redirectURL('/Login')
 })
 // End of Login Button
 // YouTube
   document.getElementById('YT').addEventListener('click', function(){
-    redirectURL(youtubeURL, 'newTab-F-E')
+    redirectURL(youtubeURL, 'newTab-E')
 })
 // End of YouTube
 // Bluesky
   document.getElementById('BS').addEventListener('click', function(){
-    redirectURL(blueskyURL, 'newTab-F-E')
+    redirectURL(blueskyURL, 'newTab-E')
 })
 // End of Bluesky
 // Whatsapp
   document.getElementById('WA').addEventListener('click', function(){
-    redirectURL(whatsappURL, 'newTab-F-E')
+    redirectURL(whatsappURL, 'newTab-E')
 })
 // End of WhatsApp
 // TikTok
   document.getElementById('TT').addEventListener('click', function(){
-    redirectURL(tiktokURL, 'newTab-F-E')
+    redirectURL(tiktokURL, 'newTab-E')
 // End of TikTok  
 })
 }
