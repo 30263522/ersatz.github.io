@@ -68,6 +68,12 @@ function redirectURL(URL, redirectType) { // Used for page redirects across the 
     if (redirectType=='replace') {location.replace('/'+subURL+URL)}
     if (redirectType=='newTab-E') {window.open(URL, '_blank').focus()}
   }
+  else if (getDatabaseRule() == true) {
+    // HTTP
+    if (redirectType == 'default') {location.assign('/'+URL)}
+    if (redirectType=='replace') {location.replace('/'+URL)}
+    if (redirectType=='newTab-E') {window.open(URL, '_blank').focus()}
+  }
 }
 // End of Redirect Function
 // Login Page Rule Function
