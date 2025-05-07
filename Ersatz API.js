@@ -59,21 +59,30 @@ function getURLElements() {
 }
 // End of Get URL Elements
 // Redirect Function
-function redirectURL(URL, redirectType) { // Used for page redirects across the API.
+function redirectURL(redirectLink, redirectType) { // Used for page redirects across the API.
+  const dr = getDatabaseRule()
   if (redirectType !=null) {redirectType=redirectType}
   else {redirectType='default'}
-  if (getDatabaseRule() == false) {
-    // HTTPS
-    if (redirectType=='default') {location.assign('/'+subURL+URL)}
-    if (redirectType=='replace') {location.replace('/'+subURL+URL)}
-    if (redirectType=='returnAsset') {return baseURL+URL}
-    if (redirectType=='newTab-E') {window.open(URL, '_blank').focus()}
+  if (redirectLink !=null) {
+    if (dr == false) {
+      // HTTPS
+      if (redirectType=='default') {location.assign('/'+subURL+redirectLink)}
+      if (redirectType=='replace') {location.replace('/'+subURL+redirectLink)}
+      if (redirectType=='newTab-E') {window.open(redirectLink, '_blank').focus()}
+    }
+    else if (dr == true) {
+      console.log('http 5')
+      console.log(redirectLink)
+      // HTTP
+      const newstring = redirectLink.slice(1)
+      console.log(newstring)
+      if (redirectType == 'default') {location.assign(`/${URL}`)}
+      if (redirectType=='replace') {location.replace(`/${URL}`)}
+      if (redirectType=='newTab-E') {window.open(redirectLink, '_blank').focus()}
+    }
   }
-  else if (getDatabaseRule() == true) {
-    // HTTP
-    if (redirectType == 'default') {location.assign('/'+URL)}
-    if (redirectType=='replace') {location.replace('/'+URL)}
-    if (redirectType=='newTab-E') {window.open(URL, '_blank').focus()}
+  else {
+    window.alert(APIName+": An error occured while redirecting: Server returned: URL not provided.")
   }
 }
 // End of Redirect Function
