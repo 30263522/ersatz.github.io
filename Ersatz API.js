@@ -248,6 +248,9 @@ function Login() {
     if (wrongpass==true) {window.alert('Password is incorrect')}
     if (wronguser==true) {window.alert('Username is incorrect')}
   }
+  else {
+    console.error(APIName+': Error while attempting to Login using JavaScript. Http detected, PhP should handle this.')
+  }
 }
 // End of Login Function
 // Create Account
@@ -273,6 +276,8 @@ function createAccount() {
       window.alert(APIName+": Missing either Username or Password, Field box is empty. Creation aborting...")
     }
   }
+  else {
+    console.error(APIName+': Error while attempting to Login using JavaScript. Http detected, PhP should handle this.')
 }
 // End
 // Login Initalisation
