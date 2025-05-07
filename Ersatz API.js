@@ -277,7 +277,7 @@ function createAccount() {
     }
   }
   else {
-    console.error(APIName+': Error while attempting to Login using JavaScript. Http detected, PhP should handle this.')
+    console.error(APIName+': Error while attempting to Login using JavaScript. Http detected, PhP should handle this.')}
 }
 // End
 // Login Initalisation
