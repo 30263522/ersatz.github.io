@@ -76,8 +76,8 @@ function redirectURL(redirectLink, redirectType) { // Used for page redirects ac
       // HTTP
       const newstring = redirectLink.slice(1)
       console.log(newstring)
-      if (redirectType=='default') {location.assign(`/${URL}`)}
-      if (redirectType=='replace') {location.replace(`/${URL}`)}
+      if (redirectType=='default') {location.assign(`/${redirectLink}`)}
+      if (redirectType=='replace') {location.replace(`/${redirectLink}`)}
       if (redirectType=='newTab-E') {window.open(redirectLink, '_blank').focus()}
     }
   }
