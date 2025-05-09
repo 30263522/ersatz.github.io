@@ -309,6 +309,9 @@ function initaliseLoginPage() {
   document.getElementById('submitMyAnswers').addEventListener('click', function() {
     Login()
   })
+  document.getElementById('createPageButton').addEventListener('click', function() {
+    redirectURL('/Login/Create')
+  })
 }
 // End of Login Page Initalisation
 function initaliseCreatePage() {
