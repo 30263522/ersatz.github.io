@@ -444,7 +444,7 @@ function mailMe(){
 
 // Bank Add
 function addToBankTable(bankName="", bankType="", contractedSince="", notes="") {
-  if (getURLElements().pathname == '/Banks/') {
+  if (getURLElements().pathname == '/Banks/' || getURLElements().pathname == "/"+subURL+"/Banks/") {
     const getHTML = document.getElementById('bankTable');
     if (bankName !="" && bankType !="" && contractedSince !="" && notes!="") {
       const newElement = document.createElement('tr');
@@ -467,7 +467,7 @@ function addToBankTable(bankName="", bankType="", contractedSince="", notes="") 
 
 // Banks Page
 function updateBanksPage() {
-  if (getURLElements().pathname == '/Banks/') {
+  if (getURLElements().pathname == '/Banks/' || getURLElements().pathname == "/"+subURL+"/Banks/") {
     const findAllBanksElements = document.getElementsByClassName('bankPageElements')
     for (let a = 0; a<findAllBanksElements.length; a++) {
       findAllBanksElements[a].remove()
