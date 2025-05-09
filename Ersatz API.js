@@ -26,8 +26,8 @@ const themesArray = [ // Avaliable Types: Text; Background; Button
   {Class:'Background', Type:'Background', Themes:{DarkMode:'black', LightMode:'white'}}
 ]
 const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contractedSince:'date/00/00/2000', Notes:""}
-  {bankName:'North Bank', bankType:'Partner', contractedSince:'07/10/2020', Notes:"No Notes"},
-  {bankName:'South Bank', bankType:'Owned', contractedSince:'11/09/2021', Notes:"We paid for this bank"},
+  {bankName:'North Bank', bankType:'Partner', contractedSince:'07/10/2020', City:"Ottwa", Country: "Canada", Notes:"No Notes"},
+  {bankName:'South Bank', bankType:'Owned', contractedSince:'11/09/2021', City:"Mexico City", Country: "Mexico", Notes:"We paid for this bank"},
 ]
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
@@ -443,16 +443,18 @@ function mailMe(){
 }
 
 // Bank Add
-function addToBankTable(bankName="", bankType="", contractedSince="", notes="") {
+function addToBankTable(bankName="", bankType="", contractedSince="", city="", country="", notes="No Notes") {
   if (getURLElements().pathname == '/Banks/' || getURLElements().pathname == "/"+subURL+"/Banks/") {
     const getHTML = document.getElementById('bankTable');
-    if (bankName !="" && bankType !="" && contractedSince !="" && notes!="") {
+    if (bankName !="" && bankType !="" && contractedSince !="" && notes!="" && city!="" && country!="") {
       const newElement = document.createElement('tr');
       newElement.className = "bankPageElements";
       newElement.innerHTML = `
       <td class='bankPageElements'>${bankName}</td>
       <td class='bankPageElements'>${bankType}</td>
       <td class='bankPageElements'>${contractedSince}</td>
+      <td class='bankPageElements'>${city}</td>
+      <td class='bankPageElements'>${country}</td>
       <td class='bankPageElements'>${notes}</td>`
       getHTML.appendChild(newElement)
     }
@@ -474,7 +476,7 @@ function updateBanksPage() {
     }
     for (let b = 0; b<banksList.length; b++) {
       const findElement = banksList[b]
-      addToBankTable(findElement.bankName, findElement.bankType, findElement.contractedSince, findElement.Notes)
+      addToBankTable(findElement.bankName, findElement.bankType, findElement.contractedSince, findElement.City ,findElement.Country, findElement.Notes)
     }
   }
   else {
