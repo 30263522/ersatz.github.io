@@ -39,4 +39,4 @@ input{width:15%; height:5%; cursor: pointer; box-shadow: 2px 2px 2px black; padd
 /*Table*/
 table{border:2px solid green; border-collapse: collapse; text-align: left; width:100%;}
 th{border: 1px solid green; text-align: center;}
-td{border: 1px solid green; text-align: center;}
+td{border: 1px solid green; text-align: center; vertical-align: top;}
