@@ -128,12 +128,10 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 if (localStorage.getItem(loginsStorageName) !=null) {
   let fetchedArray = JSON.parse(localStorage.getItem(loginsStorageName))
   for (let a = 0; a<fetchedArray.length; a++) {
-    loginsDatabase.push(fetchedArray[a])
+    loginsDatabase.push(fetchedArray[a]) 
   }
-  initaliseLogins()
 } else {
   console.info('New user detected: No Logins saved. Default logins only.')
-  initaliseLogins()
 }
 // End of Logins Retrival
 // Login Change
@@ -238,7 +236,6 @@ function Login() {
           wronguser=false
           if (findPassBox == currlgn.Pass) {
             hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:findPassBox}}
-            initaliseLogins()
             saveLogins()
             redirectURL('/', 'replace')
           }
@@ -277,7 +274,6 @@ function createAccount() {
       if (alreadyExists !=true) {
         loginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
         hasLoggedIn = {State: true, UsedCredentials: {User:findNewUserBox, Pass:findNewPassBox}}
-        saveLogins()
         redirectURL('/', 'replace')
       }
       else {
@@ -299,7 +295,7 @@ function initaliseLogins() {
     let currEle = loginsDatabase[c]
     for (let d = 0; d<newLoginsDB.length; d++) {if (newLoginsDB[d].User === currEle.User) {exists=true}}
     if (exists == false) {
-      newLoginsDB.push(currEle)
+      newLoginsDB.push(currEle) 
     }
   }
   loginsDatabase = newLoginsDB
