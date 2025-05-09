@@ -25,7 +25,8 @@ const themesArray = [ // Avaliable Types: Text; Background; Button
   {Class:'MHeading',Type:'Text', Themes:{DarkMode:'purple', LightMode:'green'}},
   {Class:'Background', Type:'Background', Themes:{DarkMode:'black', LightMode:'white'}}
 ]
-const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contractedSince:'date/00/00/2000', contractUpdate:'date/00/00/2001', Notes:{}}
+const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contractedSince:'date/00/00/2000', Notes:""}
+  {bankName:'Test', bankType:'Partner/Owned', contractedSince:'date/00/00/2000', Notes:"No Notes"},
 ]
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
@@ -37,7 +38,9 @@ const baseURL = "https://30263522.github.io/ersatz.github.io"
 let loginsDatabase = [
   {User:'User', Pass:'User'},
 ]
-const Database = [] // JavaScript database array. 
+const Database = [
+  {ID:1, },
+] // JavaScript database array. 
 
 // Versions
 function logAPIVersion() {
@@ -427,6 +430,46 @@ function mailMe(){
       emailName = ""
       emailText = ""
     }
+  }
+}
+
+// Bank Add
+function addToBankTable(bankName="", bankType="", contractedSince="", notes="") {
+  if (getURLElements().pathname == '/Banks/') {
+    const getHTML = document.getElementById('banksList');
+    if (bankName !="" && bankType !="" && contractedSince !="" && notes!="") {
+      const newElement = document.createElement('tr');
+      newElement.className = "bankPageElements";
+      newElement.innerHTML = `
+      <td class='bankPageElements'>${bankName}</td>
+      <td class='bankPageElements'>${bankType}</td>
+      <td class='bankPageElements'>${contractedSince}</td>
+      <td class='bankPageElements'>${notes}</td>`
+      getHTML.appendChild(newElement)
+    }
+    else {
+      console.error(APIName+": Attempt to call addToBankTable() without 1 or more required arguments.")
+    }
+  }
+  else {
+    console.error(APIName+": Attempt to run updateBanksPage() on a non-banks page. 411")
+  }
+}
+
+// Banks Page
+function updateBanksPage() {
+  if (getURLElements().pathname == '/Banks/') {
+    const findAllBanksElements = document.getElementsByClassName('bankPageElements')
+    for (let a = 0; a<findAllBanksElements.length; a++) {
+      findAllBanksElements[a].remove()
+    }
+    for (let b = 0; b<banksList.length; b++) {
+      const findElement = banksList[b]
+      addToBankTable(findElement.bankName, findElement.bankType, findElement.contractedSince, findElement.Notes)
+    }
+  }
+  else {
+    console.error(APIName+": Attempt to run updateBanksPage() on a non-banks page. 411")
   }
 }
 

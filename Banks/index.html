@@ -6,7 +6,7 @@
     <title>Ersatz Enterprises</title>
     <link rel="stylesheet" href="../defaultCSS.css">
 </head>
-<body onload="initialiseSocialButtons()", onbeforeunload="saveTheme()">
+<body onload="initialiseSocialButtons(), updateBanksPage()", onbeforeunload="saveTheme()">
     <div id="top">
         <div class="topnav">
         <header>Ersatz Enterprises</header>  
@@ -20,10 +20,15 @@
         <button style="float: right; visibility: hidden", id="account">Custom Text</button>
     </div>
         <br>
-        <div id="slogan">
-        <h1>Ersatz Enterprises</h1>
-        <br>
-        <h2>A bank for the people first!</h2>
+        <div id="banksList">
+            <table id="bankTable">
+                <tr>
+                  <th>Bank Name</th>
+                  <th>Bank Type</th>
+                  <th>Contracted Since</th>
+                  <th>Additional Notes</th>
+                </tr>
+              </table>
         </div>
         
     </div>
