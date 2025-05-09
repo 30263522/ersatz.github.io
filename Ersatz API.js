@@ -38,12 +38,14 @@ const subURL = "ersatz.github.io"
 const baseURL = "https://30263522.github.io/ersatz.github.io"
 let loginsDatabase = [
   {User:'User', Pass:'User'},
+  {User:'Temp', Pass:'Temp'},
 ]
 const Database = [
   {ID:1, },
 ] // JavaScript database array. 
 
 // Versions
+let newLoginsDB = []
 function logAPIVersion() {
   console.info(APIName+': Version: || '+APIVersion);
 }
@@ -128,6 +130,7 @@ if (localStorage.getItem(loginsStorageName) !=null) {
   for (let a = 0; a<fetchedArray.length; a++) {
     loginsDatabase.push(fetchedArray[a])
   }
+  initaliseLogins()
 } else {
   console.info('New user detected: No Logins saved. Default logins only.')
   initaliseLogins()
@@ -206,6 +209,7 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 // End of Save Theme (Function)
 // Save Logins (Function)
 function saveLogins() {
+  initaliseLogins()
   localStorage.setItem(loginsStorageName, JSON.stringify(loginsDatabase))
   if (hasLoggedIn.State == true) {
     localStorage.setItem(activeLoginStorageName, JSON.stringify(hasLoggedIn))
@@ -234,8 +238,9 @@ function Login() {
           wronguser=false
           if (findPassBox == currlgn.Pass) {
             hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:findPassBox}}
-            redirectURL('/', 'replace')
+            initaliseLogins()
             saveLogins()
+            redirectURL('/', 'replace')
           }
           else {
             wrongpass=true
@@ -275,6 +280,9 @@ function createAccount() {
         saveLogins()
         redirectURL('/', 'replace')
       }
+      else {
+        window.alert(APIName+': That Username is already taken!')
+      }
     }
     else {
       window.alert(APIName+": Missing either Username or Password, Field box is empty. Creation aborting...")
@@ -286,20 +294,17 @@ function createAccount() {
 // End
 // Login Initalisation
 function initaliseLogins() {
-  // Remove duplicates
-  let oldArr = loginsDatabase
-  let uniqueLogins = [];
-  let uniqueObjects = {};
-
-  oldArr.forEach(function(value) {
-    if (!uniqueObjects[value]) {
-      uniqueLogins.push(value);
-      uniqueObjects[value] = true;
+  let exists = false
+  for (let c = 0; c<loginsDatabase.length; c++) {
+    let currEle = loginsDatabase[c]
+    for (let d = 0; d<newLoginsDB.length; d++) {if (newLoginsDB[d].User === currEle.User) {exists=true}}
+    if (exists == false) {
+      newLoginsDB.push(currEle)
+    }
   }
-  loginsDatabase = uniqueLogins
-});
+  loginsDatabase = newLoginsDB
+};
 // End of Removing Duplicates
-}
 // End for initaliseLogins
 // Login Page Initalisation
 function initaliseLoginPage() {
