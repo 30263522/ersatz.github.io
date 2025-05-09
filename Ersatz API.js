@@ -26,7 +26,8 @@ const themesArray = [ // Avaliable Types: Text; Background; Button
   {Class:'Background', Type:'Background', Themes:{DarkMode:'black', LightMode:'white'}}
 ]
 const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contractedSince:'date/00/00/2000', Notes:""}
-  {bankName:'Test', bankType:'Partner/Owned', contractedSince:'date/00/00/2000', Notes:"No Notes"},
+  {bankName:'North Bank', bankType:'Partner', contractedSince:'07/10/2020', Notes:"No Notes"},
+  {bankName:'South Bank', bankType:'Owned', contractedSince:'11/09/2021', Notes:"We paid for this bank"},
 ]
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
