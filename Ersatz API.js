@@ -28,6 +28,11 @@ const themesArray = [ // Avaliable Types: Text; Background; Button
 const banksList = [ // {bankName:'bankName', bankType:'Partner/Owned', contractedSince:'date/00/00/2000', Notes:""}
   {bankName:'North Bank', bankType:'Partner', contractedSince:'07/10/2020', City:"Ottwa", Country: "Canada", Notes:"No Notes"},
   {bankName:'South Bank', bankType:'Owned', contractedSince:'11/09/2021', City:"Mexico City", Country: "Mexico", Notes:"We paid for this bank"},
+  {bankName:'Floodbanks', bankType:'Owned', contractedSince:'11/09/2021', City:"York", Country: "United Kingdom", Notes:"Has a lot of rain"},
+  {bankName:'The Breadwinner', bankType:'Partner', contractedSince:'11/09/2021', City:"Paris", Country: "France", Notes:"The flag on our building is in white and aliceblue"},
+  {bankName:'East Bank', bankType:'Partner', contractedSince:'20/01/2025', City:"Berlin", Country: "Germany", Notes:"Builds financial roads to success"},
+  {bankName:"Thacher's bank", bankType:'Partner', contractedSince:'20/01/2025', City:"New York", Country: "USA", Notes:"No Notes"},
+   
 ]
 const defaultTheme = 'LightMode' // Theme applied on first load
 const themeStorageName = 'EE-Theme' // localstorage name used for saving theme.
