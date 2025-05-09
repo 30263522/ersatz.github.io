@@ -3,13 +3,13 @@
 body{height: 100%; background-image: linear-gradient(rgb(75, 71, 71), rgb(199, 191, 191)); background-repeat:no-repeat; display: flex; flex-direction: column; justify-content: space-between;}
 html{height: 100%;}
 /*Headers, Footers*/
-header{padding:10px; align-self: center; border-style:solid; border-width:8px; border-color:aquamarine; background-color:black; color:whitesmoke;}
+header{padding:10px; align-self: center; border-style:solid; border-width:8px; border-color:aquamarine; background-color:black; color:whitesmoke}
 Footer{align-self: center; border-style:solid; border-width:8px; border-color:aquamarine; background-color:black;}
 /*Alignments*/
 
 
 /* The navbar container */
-.topnav {overflow:hidden;background-color: #000000;border-width: 8px;border-color: aquamarine;}
+.topnav {overflow:hidden;background-color: #000000;border-width: 8px;border-color: aquamarine}
   
   /* Navbar links */
   .topnav a {float: left;display: block;color: #f2f2f2;text-align: center;padding: 14px 16px;text-decoration: none;}
