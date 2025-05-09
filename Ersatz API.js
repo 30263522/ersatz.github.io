@@ -439,7 +439,7 @@ function mailMe(){
 // Bank Add
 function addToBankTable(bankName="", bankType="", contractedSince="", notes="") {
   if (getURLElements().pathname == '/Banks/') {
-    const getHTML = document.getElementById('banksList');
+    const getHTML = document.getElementById('bankTable');
     if (bankName !="" && bankType !="" && contractedSince !="" && notes!="") {
       const newElement = document.createElement('tr');
       newElement.className = "bankPageElements";

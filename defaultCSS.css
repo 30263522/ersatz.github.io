@@ -1,5 +1,5 @@
 /*Theme for the whole website*/
-*{margin: 0; padding: 0; border: 0;}
+*{margin: 0; padding: 0; border: 0; box-sizing: border-box;}
 body{height: 100%; background-image: linear-gradient(rgb(75, 71, 71), rgb(199, 191, 191)); background-repeat:no-repeat; display: flex; flex-direction: column; justify-content: space-between;}
 html{height: 100%;}
 /*Headers, Footers*/
@@ -37,4 +37,6 @@ input{width:15%; height:5%; cursor: pointer; box-shadow: 2px 2px 2px black; padd
 #userBox::placeholder, #passBox::placeholder, #myMail::placeholder, #myMessage::placeholder{color:whitesmoke; font-weight: bolder;}
 
 /*Table*/
-table{ width:100%; border:2px solid green}
+table{border:2px solid green; border-collapse: collapse; text-align: left; width:100%;}
+th{border: 1px solid green; text-align: center;}
+td{border: 1px solid green; text-align: center;}
