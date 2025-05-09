@@ -32,6 +32,9 @@ h1{align-self: self-start; text-shadow: 2px 2px 2px black;}
 h2{align-self: self-start; text-shadow: 2px 2px 2px black;}
 /*Forms*/
 input{width:15%; height:5%; cursor: pointer; box-shadow: 2px 2px 2px black; padding: 10px 12px; background-color: grey;border: #000000; border-radius: 4px; margin: 30px 0px;}
-#submitMyAnswers, #newSub, #buttonUwU{width:15%; height:5%; cursor: pointer; padding: 10px 12px; background-color: #ddd5d5; border: #000000; border-radius: 4px;}
+#submitMyAnswers, #newSub, #buttonUwU, #createPageButton{width:15%; height:5%; cursor: pointer; padding: 10px 12px; background-color: #ddd5d5; border: #000000; border-radius: 4px;}
 
 #userBox::placeholder, #passBox::placeholder, #myMail::placeholder, #myMessage::placeholder{color:whitesmoke; font-weight: bolder;}
+
+/*Table*/
+table{ width:100%; border:2px solid green}
