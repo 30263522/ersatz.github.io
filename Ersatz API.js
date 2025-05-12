@@ -272,8 +272,8 @@ function createAccount() {
         }
       })
       if (alreadyExists !=true) {
-        loginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
         hasLoggedIn = {State: true, UsedCredentials: {User:findNewUserBox, Pass:findNewPassBox}}
+        loginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
         redirectURL('/', 'replace')
       }
       else {
