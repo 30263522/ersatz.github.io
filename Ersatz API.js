@@ -43,11 +43,9 @@ const subURL = "ersatz.github.io"
 const baseURL = "https://30263522.github.io/ersatz.github.io"
 let loginsDatabase = [
   {User:'User', Pass:'User'},
-  {User:'Temp', Pass:'Temp'},
+  {User:'Temp', Pass:'Temp'}
 ]
-const Database = [
-  {ID:1, },
-] // JavaScript database array. 
+const Database = [] // JavaScript database array. 
 
 // Versions
 let newLoginsDB = []
