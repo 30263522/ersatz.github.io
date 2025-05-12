@@ -129,7 +129,7 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 }
 // End of Retrieve
 // Local Storage - Logins Retrieve
-if (localStorage.getItem(loginsStorageName) !=null) {
+if (localStorage.getItem(loginsStorageName) == null) {
   newLoginsDatabase.push({User: 'Test', Pass:'Test'})
   localStorage.setItem(loginsStorageName, newLoginsDatabase)
 }
