@@ -140,9 +140,7 @@ if (localStorage.getItem(loginsStorageName) !=null) {
 // Login Change
 let parsedALSN = JSON.parse(localStorage.getItem(activeLoginStorageName))
 if (localStorage.getItem(activeLoginStorageName) !=null && parsedALSN.State == true) {
-  const findButton = document.getElementById('loginPageButton')
   hasLoggedIn = parsedALSN
-  
 }
 
 function initaliseLoggedIn() {
