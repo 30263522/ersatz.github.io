@@ -41,11 +41,7 @@ const activeLoginStorageName = 'EE-Login-Active' // localstorage name used for s
 let hasLoggedIn = {State: false, UsedCredentials: {User:"", Pass:""}}
 const subURL = "ersatz.github.io"
 const baseURL = "https://30263522.github.io/ersatz.github.io"
-let loginsDatabase = [
-  {User:'User', Pass:'User'},
-  {User:'Temp', Pass:'Temp'}
-]
-const template = []
+const template = [{User: 'Temp', Pass:'Temp'}]
 const Database = [] // JavaScript database array. 
 
 // Versions
@@ -130,7 +126,6 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 // End of Retrieve
 // Local Storage - Logins Retrieve
 if (localStorage.getItem(loginsStorageName) == null) {
-  template.push({User:'Test', Pass:'Test'})
   localStorage.setItem(loginsStorageName, JSON.stringify(template))
 }
 // End of Logins Retrival
@@ -288,19 +283,6 @@ function createAccount() {
     console.error(APIName+': Error while attempting to Login using JavaScript. Http detected, PhP should handle this.')}
 }
 // End
-// Login Initalisation
-function initaliseLogins() {
-  let exists = false
-  for (let c = 0; c<loginsDatabase.length; c++) {
-    let currEle = loginsDatabase[c]
-    for (let d = 0; d<newLoginsDB.length; d++) {if (newLoginsDB[d].User === currEle.User) {exists=true}}
-    if (exists == false) {
-      newLoginsDB.push(currEle) 
-    }
-  }
-  loginsDatabase = newLoginsDB
-};
-// End of Removing Duplicates
 // End for initaliseLogins
 // Login Page Initalisation
 function initaliseLoginPage() {
