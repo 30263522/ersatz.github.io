@@ -129,9 +129,17 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 // End of Retrieve
 // Local Storage - Logins Retrieve
 if (localStorage.getItem(loginsStorageName) !=null) {
+  let exists = false
   let fetchedArray = JSON.parse(localStorage.getItem(loginsStorageName))
   for (let a = 0; a<fetchedArray.length; a++) {
-    loginsDatabase.push(fetchedArray[a]) 
+    loginsDatabase.forEach(selected => {
+      if (fetchedArray[a].User === selected.User) {
+        exists = true
+      }
+    })
+    if (exists == false) {
+      loginsDatabase.push(fetchedArray[a]) 
+  }
   }
 } else {
   console.info('New user detected: No Logins saved. Default logins only.')
