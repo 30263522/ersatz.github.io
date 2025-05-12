@@ -41,7 +41,7 @@ const activeLoginStorageName = 'EE-Login-Active' // localstorage name used for s
 let hasLoggedIn = {State: false, UsedCredentials: {User:"", Pass:""}}
 const subURL = "ersatz.github.io"
 const baseURL = "https://30263522.github.io/ersatz.github.io"
-const template = [{User: 'Temp', Pass:'Temp'}]
+const template = [{User: 'Temp', Pass:obfuscate('Temp')}]
 const Database = [] // JavaScript database array. 
 
 // Versions
