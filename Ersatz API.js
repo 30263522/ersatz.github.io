@@ -130,12 +130,10 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 // Local Storage - Logins Retrieve
 if (localStorage.getItem(loginsStorageName) !=null) {
   let fetchedArray = JSON.parse(localStorage.getItem(loginsStorageName))
-  for (let a = 0; a<fetchedArray.length; a++) {
-    loginsDatabase.forEach(selected => {
-      if (fetchedArray[a].User === selected.User) {}
-      else {loginsDatabase.push(fetchedArray[a]) }
-    })
-  }
+  fetchedArray.forEach(selected => {
+    if (loginsDatabase.includes(selected)) {}
+    else {loginsDatabase.push(selected)}
+  })
 } else {
   console.info('New user detected: No Logins saved. Default logins only.')
 }
