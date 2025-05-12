@@ -272,7 +272,7 @@ function createAccount() {
       if (alreadyExists !=true) {
         hasLoggedIn = {State: true, UsedCredentials:{User:findNewUserBox, Pass:findNewPassBox}}
         newLoginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
-        localStorage.setItem(loginsStorageName, newLoginsDatabase)
+        localStorage.setItem(loginsStorageName, JSON.stringify(newLoginsDatabase))
         saveLogins()
         redirectURL('/', 'replace')
       }
