@@ -13,7 +13,7 @@ For use within Ersatz Enterprises Website
 Home Page must be redirect "/"
 Each individual page should be a folder with "index.html" inside for "/pagename" redirect.
 Pages: Home (/), Contact Us (/Contact-Us), About Us (/About-Us), Banks (/Banks), Error (/err or /Error) and Login (/Login) / Create Account (/Login/Create)
-Version: */ let APIVersion = 0.9+"Beta"
+Version: */ let APIVersion = 0.9+"1Beta"
 const APIName = 'Ersatz Enterprises API'
 
 // Configuration Variables
@@ -226,7 +226,7 @@ function Login() {
       newLoginsDatabase.forEach(currlgn => {
         if (findUserBox == currlgn.User) {
           wronguser=false
-          if (findPassBox == currlgn.Pass) {
+          if (findPassBox == deObfuscate(currlgn.Pass)) {
             hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:findPassBox}}
             saveLogins()
             redirectURL('/', 'replace')
@@ -265,8 +265,8 @@ function createAccount() {
         }
       })
       if (alreadyExists !=true) {
-        hasLoggedIn = {State: true, UsedCredentials:{User:findNewUserBox, Pass:findNewPassBox}}
-        newLoginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
+        hasLoggedIn = {State: true, UsedCredentials:{User:findNewUserBox, Pass:obfuscate(findNewPassBox)}}
+        newLoginsDatabase.push({User:findNewUserBox, Pass:obfuscate(findNewPassBox)})
         localStorage.setItem(loginsStorageName, JSON.stringify(newLoginsDatabase))
         saveLogins()
         redirectURL('/', 'replace')
