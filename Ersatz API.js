@@ -463,10 +463,11 @@ function updateBanksPage() {
 }
 
 function obfuscate(Text) {
-  const randomStrings = ["LnJytyTIYE36hA10Om", "xioPLXcP0o2by5PBDf", "MgGs6wTB7bHAnwVRMO", "G9yQwJwz7Oi4VPqDaW", "Prw5zU8YxElbBUoZML"]
-  const smallStrings = ["lXmop","kq7jy","Vhr63","hjchX","oIFhc","2l9oZ","rzrNB","lBBOw","LKFlC","ta5Pd"]
+  const randomStrings = ["LnJytyTIYE36hA10Om", "xioPLXcP0o2by5PBDf", "MgGs6wTB7bHAnwVRMO", "G9yQwJwz7Oi4VPqDaW", "Prw5zU8YxElbBUoZML", "wPbMe4lB5H1hTiMRIZ","nShXk3lXzGWjOTwiwS","8hUDtvs2s7LubhzJKI","B1jPSAPs7Iphik9DlP","ACQkuuGC3H8YvA2hhY","8yly8gatbAFhLDefqo","XUygDBEPuaSNOqpGls","9zlfDvNUrq2h4aguch","uNEUBQ0EbkjySeCbj8","AZUC0YymGyI7XvbUax","L2m7GnfNwUf82515w0","L6Kkxb3lOW6LqSWlt9","InMMdYNx4YOzYDSxOT","WT7yKPIU97ARuw0Kc0","7puo6hNkHOLu4fT2d7","qVq8Ba24JQY6mSCY76","3VHLstmFp2jbU5XnbI","c5Nn66aIfgKlOZWxLS","nwahAbLKNIgsqT5AHQ","XoT6Bt5pZAYNFbUCvD","XdlnKNOfMQCEcLA1YX","GxkeWCM4JXJXLvBz12","lTecmtp9IG8RmjxQpL","EEn7wSGek5p9XC1ljk","CND6pqXRbVdubeys56",]
+  const smallStrings = ["lXmop","kq7jy","Vhr63","hjchX","oIFhc","2l9oZ","rzrNB","lBBOw","LKFlC","ta5Pd","6xbWT","Zl1g7","wiUEl","w2Nzj","v4vJn","Z8p6n","HbGIZ","YY0Bu","0MoRn","BIiWi","wn0yA","OWYPA","uT3QV","qbK6n","AA9Xy","GvVFV","WfCBJ","C7emo","3dEWt","AiABC","nRis9","n9EaO","HNQBj","CcCHU","ppmUi","aJQ9o","NuJ5O","6Dqow","xXPCH","QvDt1",]
   const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   let randomStrings_len = 18
+  let smallStrings_len = 5
   let input_len = Text.length
   let finals = []
   let endString = ""
