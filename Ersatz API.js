@@ -45,6 +45,7 @@ let loginsDatabase = [
   {User:'User', Pass:'User'},
   {User:'Temp', Pass:'Temp'}
 ]
+const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
 const Database = [] // JavaScript database array. 
 
 // Versions
@@ -129,13 +130,8 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 // End of Retrieve
 // Local Storage - Logins Retrieve
 if (localStorage.getItem(loginsStorageName) !=null) {
-  let fetchedArray = JSON.parse(localStorage.getItem(loginsStorageName))
-  fetchedArray.forEach(selected => {
-    if (loginsDatabase.includes(selected)) {}
-    else {loginsDatabase.push(selected)}
-  })
-} else {
-  console.info('New user detected: No Logins saved. Default logins only.')
+  newLoginsDatabase.push({User: 'Test', Pass:'Test'})
+  localStorage.setItem(loginsStorageName, newLoginsDatabase)
 }
 // End of Logins Retrival
 // Login Change
@@ -209,7 +205,6 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 // End of Save Theme (Function)
 // Save Logins (Function)
 function saveLogins() {
-  localStorage.setItem(loginsStorageName, JSON.stringify(loginsDatabase))
   if (hasLoggedIn.State == true) {
     localStorage.setItem(activeLoginStorageName, JSON.stringify(hasLoggedIn))
   }
@@ -232,7 +227,7 @@ function Login() {
     let wronguser = false;
     if (findUserBox !=null && findPassBox !=null) {
       // Code
-      loginsDatabase.forEach(currlgn => {
+      newLoginsDatabase.forEach(currlgn => {
         if (findUserBox == currlgn.User) {
           wronguser=false
           if (findPassBox == currlgn.Pass) {
@@ -267,14 +262,15 @@ function createAccount() {
     const findNewPassBox = document.getElementById('newPass').value
     if (findNewUserBox !=null && findNewPassBox !=null) {
       let alreadyExists
-      loginsDatabase.forEach(act => {
+      newLoginsDatabase.forEach(act => {
         if (findNewUserBox === act.User) {
           alreadyExists = true
         }
       })
       if (alreadyExists !=true) {
         hasLoggedIn = {State: true, UsedCredentials:{User:findNewUserBox, Pass:findNewPassBox}}
-        loginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
+        newLoginsDatabase.push({User:findNewUserBox, Pass:findNewPassBox})
+        localStorage.setItem(loginsStorageName, newLoginsDatabase)
         saveLogins()
         redirectURL('/', 'replace')
       }
