@@ -131,7 +131,7 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 // Local Storage - Logins Retrieve
 if (localStorage.getItem(loginsStorageName) == null) {
   template.push({User:'Test', Pass:'Test'})
-  localStorage.setItem(loginsStorageName, template)
+  localStorage.setItem(loginsStorageName, JSON.stringify(template))
 }
 // End of Logins Retrival
 // Login Change
