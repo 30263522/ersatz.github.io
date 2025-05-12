@@ -134,6 +134,7 @@ if (localStorage.getItem(loginsStorageName) !=null) {
   let fetchedArray = JSON.parse(localStorage.getItem(loginsStorageName))
   for (let a = 0; a<fetchedArray.length; a++) {
     loginsDatabase.push(fetchedArray[a]) 
+    initaliseLogins()
   }
 } else {
   console.info('New user detected: No Logins saved. Default logins only.')
@@ -212,7 +213,6 @@ function saveTheme() { // Executes automatically when page unloads, saves theme 
 // End of Save Theme (Function)
 // Save Logins (Function)
 function saveLogins() {
-  initaliseLogins()
   localStorage.setItem(loginsStorageName, JSON.stringify(loginsDatabase))
   if (hasLoggedIn.State == true) {
     localStorage.setItem(activeLoginStorageName, JSON.stringify(hasLoggedIn))
