@@ -462,6 +462,49 @@ function updateBanksPage() {
   }
 }
 
+function obfuscate(Text) {
+  const randomStrings = ["LnJytyTIYE36hA10Om", "xioPLXcP0o2by5PBDf", "MgGs6wTB7bHAnwVRMO", "G9yQwJwz7Oi4VPqDaW", "Prw5zU8YxElbBUoZML"]
+  const smallStrings = ["lXmop","kq7jy","Vhr63","hjchX","oIFhc","2l9oZ","rzrNB","lBBOw","LKFlC","ta5Pd"]
+  const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  let randomStrings_len = 18
+  let input_len = Text.length
+  let finals = []
+  let endString = ""
+
+  function getRnd(maxNum) {
+    return Math.floor(Math.random() * maxNum);
+  }
+
+  function SlashChars() {
+    for (let a = 0; a<Text.length; a++) {
+      let currLetter = Text.charAt(a);
+
+      finals.push(`${smallStrings[getRnd(smallStrings.length)]}@${alphabet[getRnd(alphabet.length)]}@|?|${currLetter}-|-z\@;`)
+    }
+  }
+  SlashChars()
+  finals.forEach(curr => {
+    endString = endString+curr
+  });
+
+  function finishIt() {
+    return `${randomStrings[getRnd(randomStrings.length)]}:)${endString}:(${randomStrings[getRnd(randomStrings.length)]}`
+  }
+  return finishIt()
+}
+
+function deObfuscate(Text) {
+  let randomStrings_len = 18
+  let smallStrings_len = 5
+  let endString = ""
+
+  let Splitted = Text.split('|')
+  for (let a = 2; a<Splitted.length; a=a+3) {
+    let char = Splitted[a].slice(0,1)
+    endString = endString+char
+  }
+  return endString
+}
 
 // Console - Creditor
 console.warn(`
