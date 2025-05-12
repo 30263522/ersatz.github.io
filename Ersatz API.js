@@ -227,7 +227,7 @@ function Login() {
         if (findUserBox == currlgn.User) {
           wronguser=false
           if (findPassBox == deObfuscate(currlgn.Pass)) {
-            hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:findPassBox}}
+            hasLoggedIn = {State: true, UsedCredentials: {User:findUserBox, Pass:obfuscate(findPassBox)}}
             saveLogins()
             redirectURL('/', 'replace')
           }
