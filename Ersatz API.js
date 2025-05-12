@@ -45,7 +45,7 @@ let loginsDatabase = [
   {User:'User', Pass:'User'},
   {User:'Temp', Pass:'Temp'}
 ]
-const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
+const template = []
 const Database = [] // JavaScript database array. 
 
 // Versions
@@ -130,8 +130,8 @@ if (localStorage.getItem(themeStorageName) !=null) { // Checks if a theme is alr
 // End of Retrieve
 // Local Storage - Logins Retrieve
 if (localStorage.getItem(loginsStorageName) == null) {
-  newLoginsDatabase.push({User: 'Test', Pass:'Test'})
-  localStorage.setItem(loginsStorageName, newLoginsDatabase)
+  template.push({User:'Test', Pass:'Test'})
+  localStorage.setItem(loginsStorageName, template)
 }
 // End of Logins Retrival
 // Login Change
@@ -221,6 +221,7 @@ function getActiveLogin() {
 // Login Function
 function Login() {
   if (getDatabaseRule() == false) {
+    const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
     const findUserBox = document.getElementById('userBox').value
     const findPassBox = document.getElementById('passBox').value
     let wrongpass = false;
@@ -258,6 +259,7 @@ function Login() {
 // Create Account
 function createAccount() {
   if (getDatabaseRule() == false) {
+    const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
     const findNewUserBox = document.getElementById('newUser').value
     const findNewPassBox = document.getElementById('newPass').value
     if (findNewUserBox !=null && findNewPassBox !=null) {
