@@ -219,8 +219,8 @@ function Login() {
     const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
     const findUserBox = document.getElementById('userBox').value
     const findPassBox = document.getElementById('passBox').value
-    let wrongpass = false;
-    let wronguser = false;
+    let wrongpass = true;
+    let wronguser = true;
     if (findUserBox !=null && findPassBox !=null) {
       // Code
       newLoginsDatabase.forEach(currlgn => {
@@ -231,12 +231,6 @@ function Login() {
             saveLogins()
             redirectURL('/', 'replace')
           }
-          else {
-            wrongpass=true
-          }
-        }
-        else {
-          wronguser=true
         }
       })
     }
