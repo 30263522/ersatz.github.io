@@ -392,7 +392,6 @@ function loginButton() {
 // The Mailto function
 function mailMe(){
   let emailName = document.getElementById("myMail").value
-  console.log(emailName)
   let emailText = document.getElementById("myMessage").value
   if (emailName !=null && emailName !="") {
     if (emailText !=null && emailText !="") {
