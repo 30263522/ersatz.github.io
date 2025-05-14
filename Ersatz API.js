@@ -215,7 +215,7 @@ function getActiveLogin() {
 // End of Retrive Active Login
 // Login Function
 function Login() {
-  if (getDatabaseRule() == false) {
+  if (getDatabaseRule() == false || getDatabaseRule() == true) {
     const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
     const findUserBox = document.getElementById('userBox').value
     const findPassBox = document.getElementById('passBox').value
@@ -253,7 +253,7 @@ function Login() {
 // End of Login Function
 // Create Account
 function createAccount() {
-  if (getDatabaseRule() == false) {
+  if (getDatabaseRule() == false || getDatabaseRule() == true) {
     const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
     const findNewUserBox = document.getElementById('newUser').value
     const findNewPassBox = document.getElementById('newPass').value
@@ -279,8 +279,6 @@ function createAccount() {
       window.alert(APIName+": Missing either Username or Password, Field box is empty. Creation aborting...")
     }
   }
-  else {
-    console.error(APIName+': Error while attempting to Login using JavaScript. Http detected, PhP should handle this.')}
 }
 // End
 // End for initaliseLogins
