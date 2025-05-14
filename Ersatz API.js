@@ -250,7 +250,7 @@ function createAccount() {
     const findNewUserBox = document.getElementById('newUser').value
     const findNewPassBox = document.getElementById('newPass').value
     if (findNewUserBox !=null && findNewPassBox !=null) {
-      let alreadyExists
+      let alreadyExists = false
       newLoginsDatabase.forEach(act => {
         if (findNewUserBox === act.User) {
           alreadyExists = true
