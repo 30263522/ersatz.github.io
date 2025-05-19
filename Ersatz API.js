@@ -13,7 +13,7 @@ For use within Ersatz Enterprises Website
 Home Page must be redirect "/"
 Each individual page should be a folder with "index.html" inside for "/pagename" redirect.
 Pages: Home (/), Contact Us (/Contact-Us), About Us (/About-Us), Banks (/Banks), Error (/err or /Error) and Login (/Login) / Create Account (/Login/Create)
-Version: */ let APIVersion = 1
+Version: */ let APIVersion = 1.1
 const APIName = 'Ersatz Enterprises API'
 
 // Configuration Variables
@@ -277,26 +277,34 @@ function createAccount() {
 // End for initaliseLogins
 // Login Page Initalisation
 function initaliseLoginPage() {
-  if (hasLoggedIn.State == true) {
-    window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
-    redirectURL('/', 'replace')
+  if (getURLElements().pathname === '/Login' || getURLElements().pathname === subURL+'/Login') {
+    if (hasLoggedIn.State == true) {
+      window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
+      redirectURL('/', 'replace')
+    }
+    document.getElementById('submitMyAnswers').addEventListener('click', function() {
+      Login()
+    })
+    document.getElementById('createPageButton').addEventListener('click', function() {
+      redirectURL('/Login/Create')
+    })
+  } else {
+    console.error(APIName+': Something went wrong! initaliseLoginPage() called outside of Login page. This function is page limited.')
   }
-  document.getElementById('submitMyAnswers').addEventListener('click', function() {
-    Login()
-  })
-  document.getElementById('createPageButton').addEventListener('click', function() {
-    redirectURL('/Login/Create')
-  })
 }
 // End of Login Page Initalisation
 function initaliseCreatePage() {
-  if (hasLoggedIn.State == true) {
-    window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
-    redirectURL('/', 'replace')
-  }
+  if (getURLElements().pathname === '/Login/Create' || getURLElements().pathname === subURL+'/Login/Create') {
+      if (hasLoggedIn.State == true) {
+        window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
+        redirectURL('/', 'replace')
+      }
   document.getElementById('newSub').addEventListener('click', function() {
     createAccount()
   })
+  } else {
+    console.error(APIName+': Something went wrong! initaliseCreatePage() called outside of Create Account page. This function is page limited.')
+  }
 }
 // End
 
@@ -392,21 +400,26 @@ function loginButton() {
 
 // The Mailto function
 function mailMe(){
-  let emailName = document.getElementById("myMail").value
-  let emailText = document.getElementById("myMessage").value
-  if (emailName !=null && emailName !="") {
-    if (emailText !=null && emailText !="") {
-      emailText = emailText.replaceAll(" ",'%20')
-      console.log(emailName)
-      console.log(emailText)
-      const mailtoHandle = document.createElement('a')
-      mailtoHandle.id = "mailto-Click"
-      mailtoHandle.href = `mailto:Support@ersatz.com?subject=Ersatz Contact&body=${emailText}`
-      document.body.appendChild(mailtoHandle)
-      mailtoHandle.click()
-      emailName = ""
-      emailText = ""
+  if (getURLElements().pathname === '/Contact-Us' || getURLElements().pathname === '/ersatz.github.io/Contact-Us/') {
+    let emailName = document.getElementById("myMail").value
+    let emailText = document.getElementById("myMessage").value
+    if (emailName !=null && emailName !="") {
+       if (emailText !=null && emailText !="") {
+        emailText = emailText.replaceAll(" ",'%20')
+        console.log(emailName)
+        console.log(emailText)
+        const mailtoHandle = document.createElement('a')
+        mailtoHandle.id = "mailto-Click"
+        mailtoHandle.href = `mailto:Support@ersatz.com?subject=Ersatz Contact&body=${emailText}`
+        document.body.appendChild(mailtoHandle)
+        mailtoHandle.click()
+        emailName = ""
+        emailText = ""
     }
+  }
+  }
+  else {
+    console.error(APIName+': Something went wrong! mailMe() called outside of Contact Us page. This function is page limited.')
   }
 }
 
