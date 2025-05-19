@@ -13,7 +13,7 @@ For use within Ersatz Enterprises Website
 Home Page must be redirect "/"
 Each individual page should be a folder with "index.html" inside for "/pagename" redirect.
 Pages: Home (/), Contact Us (/Contact-Us), About Us (/About-Us), Banks (/Banks), Error (/err or /Error) and Login (/Login) / Create Account (/Login/Create)
-Version: */ let APIVersion = 1.1
+Version: */ let APIVersion = 1.2
 const APIName = 'Ersatz Enterprises API'
 
 // Configuration Variables
@@ -219,7 +219,7 @@ function Login() {
     const findPassBox = document.getElementById('passBox').value
     let wrongpass = true;
     let wronguser = true;
-    if (findUserBox !=null && findPassBox !=null) {
+    if (findUserBox !="" && findPassBox !="") {
       // Code
       newLoginsDatabase.forEach(currlgn => {
         if (findUserBox == currlgn.User) {
@@ -249,7 +249,7 @@ function createAccount() {
     if (obfuscate(findNewPassBox) === false) {window.alert(APIName+': Failed to create account; Password contained one of these illegal characters: "|", "/", "`". Please avoid using these characters.')}
     else {
       const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
-      if (findNewUserBox !=null && findNewPassBox !=null) {
+      if (findNewUserBox !="" && findNewPassBox !="") {
         let alreadyExists = false
         newLoginsDatabase.forEach(act => {
           if (findNewUserBox === act.User) {
