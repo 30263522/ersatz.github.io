@@ -277,7 +277,7 @@ function createAccount() {
 // End for initaliseLogins
 // Login Page Initalisation
 function initaliseLoginPage() {
-  if (getURLElements().pathname === '/Login' || getURLElements().pathname === subURL+'/Login') {
+  if (getURLElements().pathname === '/Login/' || getURLElements().pathname === subURL+'/Login/') {
     if (hasLoggedIn.State == true) {
       window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
       redirectURL('/', 'replace')
@@ -294,7 +294,7 @@ function initaliseLoginPage() {
 }
 // End of Login Page Initalisation
 function initaliseCreatePage() {
-  if (getURLElements().pathname === '/Login/Create' || getURLElements().pathname === subURL+'/Login/Create') {
+  if (getURLElements().pathname === '/Login/Create/' || getURLElements().pathname === subURL+'/Login/Create/') {
       if (hasLoggedIn.State == true) {
         window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
         redirectURL('/', 'replace')
@@ -400,7 +400,7 @@ function loginButton() {
 
 // The Mailto function
 function mailMe(){
-  if (getURLElements().pathname === '/Contact-Us' || getURLElements().pathname === '/ersatz.github.io/Contact-Us/') {
+  if (getURLElements().pathname === '/Contact-Us/' || getURLElements().pathname === '/ersatz.github.io/Contact-Us/') {
     let emailName = document.getElementById("myMail").value
     let emailText = document.getElementById("myMessage").value
     if (emailName !=null && emailName !="") {
