@@ -246,14 +246,16 @@ function Login() {
 // Create Account
 function createAccount() {
   if (getDatabaseRule() == false || getDatabaseRule() == true) {
-    const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
     const findNewUserBox = document.getElementById('newUser').value
     const findNewPassBox = document.getElementById('newPass').value
-    if (findNewUserBox !=null && findNewPassBox !=null) {
-      let alreadyExists = false
-      newLoginsDatabase.forEach(act => {
-        if (findNewUserBox === act.User) {
-          alreadyExists = true
+    if (obfuscate(findNewPassBox) === false) {window.alert(APIName+': Failed to create account; Password contained one of these illegal characters: "|", "/", "`". Please avoid using these characters.')}
+    else {
+      const newLoginsDatabase = JSON.parse(localStorage.getItem(loginsStorageName))
+      if (findNewUserBox !=null && findNewPassBox !=null) {
+        let alreadyExists = false
+        newLoginsDatabase.forEach(act => {
+          if (findNewUserBox === act.User) {
+            alreadyExists = true
         }
       })
       if (alreadyExists !=true) {
@@ -271,6 +273,7 @@ function createAccount() {
       window.alert(APIName+": Missing either Username or Password, Field box is empty. Creation aborting...")
     }
   }
+}
 }
 // End
 // End for initaliseLogins
@@ -457,11 +460,21 @@ function obfuscate(Text) {
   const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   let randomStrings_len = 18
   let smallStrings_len = 5
+  let allowed = true
   let input_len = Text.length
   let finals = []
   let endString = ""
 
-  function getRnd(maxNum) {
+  // Test String
+  for (let test = 0; test<Text.length; test++) {
+    let curr = Text.charAt(test);
+    if (curr === "|" || curr === "/" || curr === "`") {
+      allowed = false
+    }
+  }
+  if (allowed === false) {return false}
+  else {
+    function getRnd(maxNum) {
     return Math.floor(Math.random() * maxNum);
   }
 
@@ -481,6 +494,7 @@ function obfuscate(Text) {
     return `${randomStrings[getRnd(randomStrings.length)]}:)${endString}:(${randomStrings[getRnd(randomStrings.length)]}`
   }
   return finishIt()
+  }
 }
 
 function deObfuscate(Text) {
