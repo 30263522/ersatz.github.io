@@ -77,8 +77,6 @@ function redirectURL(redirectLink, redirectType) { // Used for page redirects ac
       if (redirectType=='newTab-E') {window.open(redirectLink, '_blank').focus()}
     }
     else if (dr == true) {
-      console.log('http 5')
-      console.log(redirectLink)
       // HTTP
       const newstring = redirectLink.slice(1)
       console.log(newstring)
