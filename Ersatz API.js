@@ -13,7 +13,7 @@ For use within Ersatz Enterprises Website
 Home Page must be redirect "/"
 Each individual page should be a folder with "index.html" inside for "/pagename" redirect.
 Pages: Home (/), Contact Us (/Contact-Us), About Us (/About-Us), Banks (/Banks), Error (/err or /Error) and Login (/Login) / Create Account (/Login/Create)
-Version: */ let APIVersion = 1.2
+Version: */ let APIVersion = 1.3
 const APIName = 'Ersatz Enterprises API'
 
 // Configuration Variables
@@ -277,7 +277,7 @@ function createAccount() {
 // End for initaliseLogins
 // Login Page Initalisation
 function initaliseLoginPage() {
-  if (getURLElements().pathname === '/Login/' || getURLElements().pathname === subURL+'/Login/') {
+  if (getURLElements().pathname === '/Login/' || getURLElements().pathname === "/"+subURL+'/Login/') {
     if (hasLoggedIn.State == true) {
       window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
       redirectURL('/', 'replace')
@@ -294,7 +294,7 @@ function initaliseLoginPage() {
 }
 // End of Login Page Initalisation
 function initaliseCreatePage() {
-  if (getURLElements().pathname === '/Login/Create/' || getURLElements().pathname === subURL+'/Login/Create/') {
+  if (getURLElements().pathname === '/Login/Create/' || getURLElements().pathname === "/"+subURL+'/Login/Create/') {
       if (hasLoggedIn.State == true) {
         window.alert('404 - Access to this page was denied. This may be because you are already logged in!')
         redirectURL('/', 'replace')
